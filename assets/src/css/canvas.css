@@ -8,6 +8,11 @@
 .wrapper .footer {
   background-color: var(--c-04);
 }
+.wrapper .fa-xl,
+.wrapper .fa-2xl {
+  line-height: unset;
+  vertical-align: unset;
+}
 .wrapper .header {
   display: grid;
   grid-area: header;
@@ -24,6 +29,13 @@
   background-color: var(--c-02);
   grid-column: 2/3;
 }
+.wrapper .header__logo .fa-beat-fade {
+  color: #547793;
+  animation-name: none;
+}
+.wrapper .header__logo .fa-beat-fade:hover {
+  animation-name: fa-beat-fade;
+}
 .wrapper .header__task {
   color: var(--c-white);
   font-size: var(--fs-l);
@@ -37,6 +49,30 @@
 .wrapper .main .sidebar {
   background-color: var(--c-01);
   padding: var(--sp-l);
+}
+.wrapper .main .sidebar__tools {
+  padding: unset;
+  margin: unset;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  width: -moz-max-content;
+  width: max-content;
+  margin: auto;
+  background-color: #C1C9CC;
+  border-radius: 12px;
+}
+.wrapper .main .sidebar__tool {
+  list-style: none;
+  width: auto;
+  height: auto;
+  padding-left: 4px;
+  margin: 5px;
+  color: #F7F2EF;
+}
+.wrapper .main .sidebar__tool:hover {
+  color: #547793;
+  opacity: 0.4;
+  transition: 0.4s;
 }
 .wrapper .main .canvas {
   padding-left: var(--sp-xxl);

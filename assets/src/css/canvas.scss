@@ -11,6 +11,12 @@
     .footer {
         background-color: var(--c-04);
     }
+
+    .fa-xl, 
+    .fa-2xl {
+        line-height: unset;
+        vertical-align: unset;
+    }
         
     .header {
         display: grid;
@@ -25,6 +31,15 @@
             border-radius: 50%;
             background-color: var(--c-02);
             grid-column: 2 / 3;
+
+            .fa-beat-fade {
+                color: #547793;
+                animation-name: none;
+
+                &:hover {
+                    animation-name: fa-beat-fade;
+                }
+            }
         }
         
         &__task {
@@ -49,7 +64,29 @@
             }
 
             &__tools {
-              
+                padding: unset;
+                margin: unset;
+                display: grid;
+                grid-template-columns: repeat(2, max-content);
+                width: max-content;
+                margin: auto;
+                background-color: #C1C9CC;
+                border-radius: 12px;
+            }
+
+            &__tool {
+                list-style: none;  
+                width: auto;
+                height: auto;
+                padding-left: 4px;
+                margin: 5px;
+                color: #F7F2EF;
+
+                &:hover {
+                    color: #547793;
+                    opacity: 0.4;
+                    transition: 0.4s;
+                }
             }
         }
             
