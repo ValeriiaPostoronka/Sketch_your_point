@@ -1,0 +1,47 @@
+/**
+ * Custom CSS properties.
+ */
+ :root {
+    /* Font size */
+    --fs-base: 16px;
+
+    --fs-xs: calc(var(--fs-base) * 0.75); // 12px
+    --fs-s: calc(var(--fs-base) * 0.875); // 14px
+    --fs-m: var(--fs-base); // 16px
+    --fs-l: calc(var(--fs-base) * 1.125); // 18px
+    --fs-xl: calc(var(--fs-base) * 1.25); // 20px
+
+    /* Spaces */
+    --sp: 16px; 
+
+    --sp-xs: calc(var(--sp) * 0.25); // 4px
+    --sp-s: calc(var(--sp) * 0.5); // 8px
+    --sp-m: calc(var(--sp) * 0.75); // 12px
+    --sp-l: var(--sp); // 16px
+    --sp-xl: calc(var(--sp) * 1.5); // 24px
+    --sp-xxl: calc(var(--sp) * 2); // 32px
+
+    /* Gaps */ 
+    --gap-base: 16px;
+
+    --gap-xs: calc(var(--gap) / 2); // 8px
+    --gap-m: var(--gap); // 16px
+    --gap-xl: calc(var(--gap) * 2); // 32px
+
+    /* Radius */
+    --br-base: 4px;
+
+    --br-xs: calc(var(--br-base) / 2); // 2px
+    --br-s: var(--br-base); // 4px
+    --br-m: calc(var(--br-base) * 2); // 8px
+    --br-l: calc(var(--br-base) * 4); // 16px
+    --br-xl: calc(var(--br-base) * 6); // 24px
+
+    /* Colors */
+    --c-white: #FFF;
+    --c-black: #000;
+    --c-01: #547793;
+    --c-02: #F7F2EF;
+    --c-03: #E0E0E0;
+    --c-04: #C1C9CC;
+}

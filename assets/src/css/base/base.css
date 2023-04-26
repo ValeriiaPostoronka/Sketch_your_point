@@ -1,0 +1,39 @@
+/**
+ * Custom CSS properties.
+ */
+:root {
+  /* Font size */
+  --fs-base: 16px;
+  --fs-xs: calc(var(--fs-base) * 0.75);
+  --fs-s: calc(var(--fs-base) * 0.875);
+  --fs-m: var(--fs-base);
+  --fs-l: calc(var(--fs-base) * 1.125);
+  --fs-xl: calc(var(--fs-base) * 1.25);
+  /* Spaces */
+  --sp: 16px;
+  --sp-xs: calc(var(--sp) * 0.25);
+  --sp-s: calc(var(--sp) * 0.5);
+  --sp-m: calc(var(--sp) * 0.75);
+  --sp-l: var(--sp);
+  --sp-xl: calc(var(--sp) * 1.5);
+  --sp-xxl: calc(var(--sp) * 2);
+  /* Gaps */
+  --gap-base: 16px;
+  --gap-xs: calc(var(--gap) / 2);
+  --gap-m: var(--gap);
+  --gap-xl: calc(var(--gap) * 2);
+  /* Radius */
+  --br-base: 4px;
+  --br-xs: calc(var(--br-base) / 2);
+  --br-s: var(--br-base);
+  --br-m: calc(var(--br-base) * 2);
+  --br-l: calc(var(--br-base) * 4);
+  --br-xl: calc(var(--br-base) * 6);
+  /* Colors */
+  --c-white: #FFF;
+  --c-black: #000;
+  --c-01: #547793;
+  --c-02: #F7F2EF;
+  --c-03: #E0E0E0;
+  --c-04: #C1C9CC;
+}/*# sourceMappingURL=base.css.map */
