@@ -49,6 +49,9 @@
 .wrapper .main .sidebar {
   background-color: var(--c-01);
   padding: var(--sp-l);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 .wrapper .main .sidebar__tools {
   padding: unset;
@@ -73,6 +76,9 @@
   color: #547793;
   opacity: 0.4;
   transition: 0.4s;
+}
+.wrapper .main .sidebar__color {
+  width: 100%;
 }
 .wrapper .main .canvas {
   width: 100%;

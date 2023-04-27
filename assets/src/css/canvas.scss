@@ -58,6 +58,9 @@
         .sidebar {
             background-color: var(--c-01);
             padding: var(--sp-l);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         
             &__menu {
             
@@ -87,6 +90,10 @@
                     opacity: 0.4;
                     transition: 0.4s;
                 }
+            }
+
+            &__color {
+                width: 100%;
             }
         }
             
