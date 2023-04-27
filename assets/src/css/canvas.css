@@ -75,7 +75,12 @@
   transition: 0.4s;
 }
 .wrapper .main .canvas {
-  padding-left: var(--sp-xxl);
+  width: 100%;
+  height: 100%;
+}
+.wrapper .main .canvas .vb-canvas {
+  width: 100%;
+  display: block;
 }
 .wrapper .footer {
   display: grid;
