@@ -56,7 +56,7 @@
 .wrapper .main .sidebar__menu {
   display: flex;
 }
-.wrapper .main .sidebar__menu input {
+.wrapper .main .sidebar__range {
   -webkit-appearance: slider-vertical;
      -moz-appearance: slider-vertical;
           appearance: slider-vertical;

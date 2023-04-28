@@ -64,12 +64,12 @@
         
             &__menu {
                 display: flex;
+            }
 
-                input {
-                    appearance: slider-vertical;
-                    writing-mode: bt-lr;
-                    width: 20px;
-                }
+            &__range {
+                appearance: slider-vertical;
+                writing-mode: bt-lr;
+                width: 20px;
             }
 
             &__tools {
