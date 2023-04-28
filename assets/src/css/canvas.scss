@@ -63,7 +63,13 @@
             gap: 10px;
         
             &__menu {
-            
+                display: flex;
+
+                input {
+                    appearance: slider-vertical;
+                    writing-mode: bt-lr;
+                    width: 20px;
+                }
             }
 
             &__tools {

@@ -18,7 +18,7 @@ const { ctx } = VBCanvas.createCanvas({
 
 let canvas = document.getElementsByTagName('canvas');
 
-ctx.lineWidth = radius*2; //  diameter for lineWidth
+ctx.lineWidth = radius*2; // diameter for lineWidth
 ctx.beginPath();
 
 /**

@@ -53,6 +53,16 @@
   flex-direction: column;
   gap: 10px;
 }
+.wrapper .main .sidebar__menu {
+  display: flex;
+}
+.wrapper .main .sidebar__menu input {
+  -webkit-appearance: slider-vertical;
+     -moz-appearance: slider-vertical;
+          appearance: slider-vertical;
+  writing-mode: bt-lr;
+  width: 20px;
+}
 .wrapper .main .sidebar__tools {
   padding: unset;
   margin: unset;
