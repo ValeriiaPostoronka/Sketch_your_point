@@ -6,8 +6,10 @@
 let radius = 10;
 let dragging = false;
 
-const canvasWidth = 1166; // viewBox width
-const canvasHeight = 517; // viewBox height
+let canvasBox = document.getElementsByClassName('canvas');
+
+const canvasWidth = canvasBox[0].offsetWidth; // viewBox width
+const canvasHeight = canvasBox[0].offsetHeight; // viewBox height
 
 const { ctx } = VBCanvas.createCanvas({
     viewBox: [0, 0, canvasWidth, canvasHeight], // viewBox (x, y, width, height)
