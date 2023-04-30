@@ -87,6 +87,9 @@
   opacity: 0.4;
   transition: 0.4s;
 }
+.wrapper .main .sidebar__tool .active {
+  color: #547793;
+}
 .wrapper .main .sidebar__color {
   width: 100%;
 }
