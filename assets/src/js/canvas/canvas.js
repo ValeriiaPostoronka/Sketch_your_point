@@ -16,6 +16,8 @@ const { ctx } = VBCanvas.createCanvas({
     target: '.canvas', // where to mount the <canvas> element
 });
 
+ctx.imageSmoothingEnabled = false;
+
 let canvas = document.getElementsByTagName('canvas');
 
 ctx.lineWidth = radius*2; // diameter for lineWidth
