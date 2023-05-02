@@ -1,11 +1,43 @@
-const squareRegular = () => {
+const squareRegular = {
+    engage(point) {
+        
+    },
 
+    disengage() {
+
+    },
+
+    putPoint(point) {
+        
+    },
+
+    click() {
+
+    },
+
+    addEvent() {
+
+    }
 }
 
-const squareSolid = () => {
+const squareSolid = {
+    engage(point) {
+        
+    },
 
-}
+    disengage() {
 
-const squareRemover = () => {
+    },
 
+    putPoint(point) {
+        
+    },
+
+    click() {
+
+    },
+
+    addEvent() {
+
+    }
 }

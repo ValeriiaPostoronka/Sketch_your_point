@@ -1,11 +1,43 @@
-const circleRegular = () => {
+const circleRegular = {
+    engage(point) {
+        
+    },
 
+    disengage() {
+
+    },
+
+    putPoint(point) {
+        
+    },
+
+    click() {
+
+    },
+
+    addEvent() {
+
+    }
 }
 
-const circleSolid = () => {
+const circleSolid = {
+    engage(point) {
+        
+    },
 
-}
+    disengage() {
 
-const circleRemover = () => {
+    },
 
+    putPoint(point) {
+        
+    },
+
+    click() {
+
+    },
+
+    addEvent() {
+
+    }
 }

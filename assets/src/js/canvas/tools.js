@@ -1,46 +1,47 @@
-/**
- * fa-xl - class from icons. It is used for getting DOM elements
- */
-class tool {
-    constructor(name, func, remover) {
+class tool { // fa-xl - class from icons. It is used for getting DOM elements
+    constructor(name, func) {
         this.name = name;
         this.func = func;
-        this.remover = remover;
     }
 }
 
 const toolsArray = [
-    new tool('pen', pen, lineRemover),
-    new tool('eraser', eraser, lineRemover),
-    new tool('squareRegular', squareRegular, squareRemover),
-    new tool('circleRegular', circleRegular, circleRemover),
-    new tool('squareSolid', squareSolid, squareRemover),
-    new tool('circleSolid', circleSolid, circleRemover),
-    new tool('segment', segment, lineRemover),
-    new tool('fill', fill, fillRemover),
+    new tool('pen', pen),
+    new tool('eraser', eraser),
+    new tool('squareRegular', squareRegular),
+    new tool('circleRegular', circleRegular),
+    new tool('squareSolid', squareSolid),
+    new tool('circleSolid', circleSolid),
+    new tool('segment', segment),
+    new tool('fill', fill),
     new tool('undo', undo),
     new tool('redo', redo)
 ];
 
 let activeTool = toolsArray[0];
-activeTool.func();
+activeTool.func.addEvent();
 
 toolsDOMelements = document.getElementsByClassName('fa-xl');
-
-let index = 0;
 
 [...toolsDOMelements].forEach((element) => {
     element.addEventListener('click', () => {
         eraseActive();
-        activeTool.remover();
+        eventListenerRemover();
         activeTool = toolsArray[[...toolsDOMelements].indexOf(element)];
         element.classList.add('active');
-        activeTool.func();
+        activeTool.func.addEvent();
     });
 });
 
-let eraseActive = function() {
+let eraseActive = () => {
     [...toolsDOMelements].forEach((element) => {
         element.classList.remove('active');
     });
+}
+
+let eventListenerRemover = () => {
+    canvas[0].removeEventListener('mousedown', activeTool.func.engage);
+    canvas[0].removeEventListener('mousemove', activeTool.func.putPoint);
+    canvas[0].removeEventListener('mouseup', activeTool.func.disengage);
+    canvas[0].removeEventListener('click', activeTool.func.click);
 }

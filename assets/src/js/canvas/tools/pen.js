@@ -1,48 +1,31 @@
- /**
-     * putPoint - main drawing function for line
-     * @param {MouseEvent} point - mouse handler for mouse coordinates 
-     */
+const pen = {
 
- let putPoint = (point) => {
-    if(dragging) {
-        let rect = canvas[0].getBoundingClientRect();
-        ctx.lineTo(point.clientX - rect.left, point.clientY - rect.top);
-        ctx.stroke();
+    engage(point) {
+        dragging = true;
+        pen.putPoint(point);
+    },
+
+    disengage() {
+        dragging = false;
         ctx.beginPath();
-        ctx.arc(point.clientX - rect.left, point.clientY - rect.top, radius, 0, Math.PI*2);
-        ctx.fill();
-        ctx.beginPath();
-        ctx.moveTo(point.clientX - rect.left, point.clientY - rect.top);
+    },
+
+    putPoint(point) {
+        if(dragging) {
+            let rect = canvas[0].getBoundingClientRect();
+            ctx.lineTo(point.clientX - rect.left, point.clientY - rect.top);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.arc(point.clientX - rect.left, point.clientY - rect.top, radius, 0, Math.PI*2);
+            ctx.fill();
+            ctx.beginPath();
+            ctx.moveTo(point.clientX - rect.left, point.clientY - rect.top);
+        }
+    },
+
+    addEvent() {
+        canvas[0].addEventListener('mousedown', pen.engage);
+        canvas[0].addEventListener('mousemove', pen.putPoint);
+        canvas[0].addEventListener('mouseup', pen.disengage);
     }
-}
-
-/**
- * engage - click event function. Draw first circle and start dragging
- * @param {MouseEvent} point - mouse handler for mouse coordinates 
- */
-
-let engage = (point) => {
-    dragging = true;
-    putPoint(point);
-}
-
-// disengage - undragging event function. Stop dragging and end last drawing
-
-let disengage = () => {
-    dragging = false;
-    ctx.beginPath();
-}
-
-const pen = () => {
-    // EventListeners
-
-    canvas[0].addEventListener('mousedown', engage);
-    canvas[0].addEventListener('mousemove', putPoint);
-    canvas[0].addEventListener('mouseup', disengage);
-}
-
-const lineRemover = () => {
-    canvas[0].removeEventListener('mousedown', engage);
-    canvas[0].removeEventListener('mousemove', putPoint);
-    canvas[0].removeEventListener('mouseup', disengage);
-}
+};
