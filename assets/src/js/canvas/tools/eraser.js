@@ -1,20 +1,15 @@
- /**
-     * putPoint - main drawing function for line
-     * @param {MouseEvent} point - mouse handler for mouse coordinates 
-     */
-
  const eraser = {
 
     engage(point) {
         dragging = true;
-        penDo.putPoint(point);
+        eraser.putPoint(point);
+        ctx.globalCompositeOperation="destination-out";
     },
-
-// disengage - undragging event function. Stop dragging and end last drawing
 
     disengage() {
         dragging = false;
         ctx.beginPath();
+        ctx.globalCompositeOperation="source-over";
     },
 
     putPoint(point) {
@@ -29,15 +24,6 @@
             ctx.moveTo(point.clientX - rect.left, point.clientY - rect.top);
         }
     },
-
-    click() {
-
-    },
-
-/**
- * engage - click event function. Draw first circle and start dragging
- * @param {MouseEvent} point - mouse handler for mouse coordinates 
- */
 
     addEvent() {
         canvas[0].addEventListener('mousedown', eraser.engage);
