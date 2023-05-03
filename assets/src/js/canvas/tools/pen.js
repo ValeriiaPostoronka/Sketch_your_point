@@ -14,7 +14,7 @@ const pen = {
 
     putPoint(point) {
         if(dragging) {
-            let rect = canvas[0].getBoundingClientRect();
+            
             ctx.lineTo(point.clientX - rect.left, point.clientY - rect.top);
             ctx.stroke();
             ctx.beginPath();

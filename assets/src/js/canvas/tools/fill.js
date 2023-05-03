@@ -1,7 +1,7 @@
 const fill = {
     
     click(event) {
-        let rect = canvas[0].getBoundingClientRect();
+        
         const x = event.clientX  - rect.left;
         const y = event.clientY - rect.top;
     

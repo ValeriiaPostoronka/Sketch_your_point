@@ -19,9 +19,10 @@ const { ctx } = VBCanvas.createCanvas({
 ctx.imageSmoothingEnabled = false;
 
 let canvas = document.getElementsByTagName('canvas');
-
-ctx.lineWidth = radius*2; // diameter for lineWidth
-ctx.beginPath();
+let rect = canvas[0].getBoundingClientRect();
 
 let cPushArray = new Array();
 let cStep = -1;
+
+ctx.lineWidth = radius*2; // diameter for lineWidth
+ctx.beginPath();
