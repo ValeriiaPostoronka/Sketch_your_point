@@ -28,8 +28,8 @@
     },
 
     addEvent() {
-        canvas[0].addEventListener('mousedown', eraser.engage);
-        canvas[0].addEventListener('mousemove', eraser.putPoint);
-        canvas[0].addEventListener('mouseup', eraser.disengage);
+        canvas[0].addEventListener('mousedown', this.engage);
+        canvas[0].addEventListener('mousemove', this.putPoint);
+        canvas[0].addEventListener('mouseup', this.disengage);
     }
 };

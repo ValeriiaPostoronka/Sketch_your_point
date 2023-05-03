@@ -11,6 +11,6 @@ const fill = {
     },
 
     addEvent() {
-        canvas[0].addEventListener('click', fill.click);
+        canvas[0].addEventListener('click', this.click);
     }
 };

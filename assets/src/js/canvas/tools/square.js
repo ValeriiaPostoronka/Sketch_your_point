@@ -44,7 +44,7 @@ const squareSolid = {
         let [x,y,w,h] = squareDisengage(point);
         ctx.strokeRect(x,y,w,h);
         ctx.fillRect(x,y,w,h);
-
+        
         cPush();
     },
 

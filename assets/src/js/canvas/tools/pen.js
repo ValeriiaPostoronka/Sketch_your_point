@@ -26,8 +26,8 @@ const pen = {
     },
 
     addEvent() {
-        canvas[0].addEventListener('mousedown', pen.engage);
-        canvas[0].addEventListener('mousemove', pen.putPoint);
-        canvas[0].addEventListener('mouseup', pen.disengage);
+        canvas[0].addEventListener('mousedown', this.engage);
+        canvas[0].addEventListener('mousemove', this.putPoint);
+        canvas[0].addEventListener('mouseup', this.disengage);
     }
 };
