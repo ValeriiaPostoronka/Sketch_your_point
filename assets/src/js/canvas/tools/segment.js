@@ -19,6 +19,8 @@ const segment = {
         ctx.arc(point.clientX - rect.left, point.clientY - rect.top, radius, 0, Math.PI*2);
         ctx.fill();
         ctx.beginPath();
+        
+        cPush();
     },
 
     addEvent() {

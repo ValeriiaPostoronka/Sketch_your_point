@@ -8,6 +8,8 @@ const pen = {
     disengage() {
         dragging = false;
         ctx.beginPath();
+        
+        cPush();
     },
 
     putPoint(point) {

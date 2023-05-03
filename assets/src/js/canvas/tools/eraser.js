@@ -10,6 +10,8 @@
         dragging = false;
         ctx.beginPath();
         ctx.globalCompositeOperation="source-over";
+        
+        cPush();
     },
 
     putPoint(point) {

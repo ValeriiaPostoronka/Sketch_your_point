@@ -5,6 +5,7 @@ const squareRegular = {
 
     disengage() {
 
+        cPush();
     },
 
     putPoint(point) {
@@ -27,6 +28,7 @@ const squareSolid = {
 
     disengage() {
 
+        cPush();
     },
 
     putPoint(point) {

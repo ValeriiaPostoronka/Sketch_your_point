@@ -5,6 +5,7 @@ const circleRegular = {
 
     disengage() {
 
+        cPush();
     },
 
     putPoint(point) {
@@ -27,6 +28,7 @@ const circleSolid = {
 
     disengage() {
 
+        cPush();
     },
 
     putPoint(point) {

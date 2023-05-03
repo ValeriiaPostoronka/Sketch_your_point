@@ -21,8 +21,8 @@ activeTool.func.addEvent();
 
 toolsDOMelementsCollection = document.getElementsByClassName('fa-xl');
 let toolsDOMelements =  [...toolsDOMelementsCollection];
-toolsDOMelements.pop();
-toolsDOMelements.pop();
+toolsDOMelements.pop().addEventListener('click', redo);
+toolsDOMelements.pop().addEventListener('click', undo);
 
 toolsDOMelements.forEach((element) => {
     element.addEventListener('click', () => {
@@ -46,3 +46,5 @@ let eventListenerRemover = () => {
     canvas[0].removeEventListener('mouseup', activeTool.func.disengage);
     canvas[0].removeEventListener('click', activeTool.func.click);
 }
+
+cPush();

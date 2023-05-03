@@ -22,3 +22,6 @@ let canvas = document.getElementsByTagName('canvas');
 
 ctx.lineWidth = radius*2; // diameter for lineWidth
 ctx.beginPath();
+
+let cPushArray = new Array();
+let cStep = -1;
