@@ -17,6 +17,8 @@ const canvasHeight = canvasBox[0].offsetHeight; // viewBox height
 // });
 
 let canvas = document.getElementsByTagName('canvas');
+canvas[0].style.width = '100%';
+canvas[0].style.height = '100%';
 canvas[0].width = canvasWidth;
 canvas[0].height = canvasHeight;
 const ctx = canvas[0].getContext('2d');
@@ -26,6 +28,7 @@ ctx.imageSmoothingEnabled = false;
 
 let cPushArray = new Array();
 let cStep = -1;
+let snapshot;
 
 ctx.lineWidth = radius*2; // diameter for lineWidth
 ctx.beginPath();
