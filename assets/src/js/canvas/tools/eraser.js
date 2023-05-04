@@ -7,11 +7,23 @@
     },
 
     disengage() {
-        dragging = false;
-        ctx.beginPath();
-        ctx.globalCompositeOperation="source-over";
-        
-        cPush();
+        if (dragging) {
+            dragging = false;
+            ctx.beginPath();
+            ctx.globalCompositeOperation="source-over";
+            
+            cPush();
+        }
+    },
+
+    leave() {
+        if (dragging) {
+            dragging = false;
+            ctx.beginPath();
+            ctx.globalCompositeOperation="source-over";
+            
+            cPush();
+        }
     },
 
     putPoint(point) {
@@ -30,5 +42,6 @@
         canvas[0].addEventListener('mousedown', this.engage);
         canvas[0].addEventListener('mousemove', this.putPoint);
         canvas[0].addEventListener('mouseup', this.disengage);
+        canvas[0].addEventListener('mouseleave', this.leave);
     }
 };

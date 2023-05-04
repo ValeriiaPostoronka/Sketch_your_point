@@ -45,6 +45,7 @@ let eventListenerRemover = () => {
     canvas[0].removeEventListener('mousemove', activeTool.func.putPoint);
     canvas[0].removeEventListener('mouseup', activeTool.func.disengage);
     canvas[0].removeEventListener('click', activeTool.func.click);
+    canvas[0].removeEventListener('mouseleave', activeTool.func.leave);
 }
 
 cPush();

@@ -16,14 +16,24 @@ let circlePutPoint = (point) => {
     return [x,y,scaleX,scaleY];
 }
 
+let circleDisengage = () => {
+    if (dragging){
+        dragging = false;
+        cPush();
+    }
+}
+
 const circleRegular = {
     engage(point) {
         circleEngage(point);
     },
 
     disengage() {
-        dragging = false;
-        cPush();
+        circleDisengage();
+    },
+
+    leave() {
+        circleDisengage();
     },
 
     putPoint(point) {
@@ -44,6 +54,7 @@ const circleRegular = {
         canvas[0].addEventListener('mousedown', this.engage);
         canvas[0].addEventListener('mouseup', this.disengage);
         canvas[0].addEventListener('mousemove', this.putPoint);
+        canvas[0].addEventListener('mouseleave', this.leave);
     }
 }
 
@@ -53,8 +64,11 @@ const circleSolid = {
     },
 
     disengage() {
-        dragging = false;
-        cPush();
+        circleDisengage();
+    },
+
+    leave() {
+        circleDisengage();
     },
 
     putPoint(point) {
@@ -76,5 +90,6 @@ const circleSolid = {
         canvas[0].addEventListener('mousedown', this.engage);
         canvas[0].addEventListener('mouseup', this.disengage);
         canvas[0].addEventListener('mousemove', this.putPoint);
+        canvas[0].addEventListener('mouseleave', this.leave);
     }
 }

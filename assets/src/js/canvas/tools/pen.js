@@ -6,10 +6,21 @@ const pen = {
     },
 
     disengage() {
-        dragging = false;
-        ctx.beginPath();
-        
-        cPush();
+        if (dragging) {
+            dragging = false;
+            ctx.beginPath();
+            
+            cPush();
+        }
+    },
+
+    leave() {
+        if (dragging) {
+            dragging = false;
+            ctx.beginPath();
+            
+            cPush();
+        }
     },
 
     putPoint(point) {
@@ -28,5 +39,6 @@ const pen = {
         canvas[0].addEventListener('mousedown', this.engage);
         canvas[0].addEventListener('mousemove', this.putPoint);
         canvas[0].addEventListener('mouseup', this.disengage);
+        canvas[0].addEventListener('mouseleave', this.leave);
     }
 };

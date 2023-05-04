@@ -14,15 +14,25 @@ let squarePutPoint = (point) => {
     return [x,y,w,h];
 }
 
+let squareDisengage = () => {
+    if (dragging) {
+        dragging = false;
+        cPush();
+    }
+}
+
 const squareRegular = {
 
     engage(point) {
         squareEngage(point);
     },
 
-    disengage(point) {
-        dragging = false;
-        cPush();
+    disengage() {
+        squareDisengage();
+    },
+
+    leave() {
+        squareDisengage();
     },
 
     putPoint(point) {
@@ -37,6 +47,7 @@ const squareRegular = {
         canvas[0].addEventListener('mousedown', this.engage);
         canvas[0].addEventListener('mousemove', this.putPoint);
         canvas[0].addEventListener('mouseup', this.disengage);
+        canvas[0].addEventListener('mouseleave', this.leave);
     }
 }
 
@@ -46,9 +57,12 @@ const squareSolid = {
         squareEngage(point);
     },
 
-    disengage(point) {
-        dragging = false;
-        cPush();
+    disengage() {
+        squareDisengage();
+    },
+
+    leave() {
+        squareDisengage();
     },
 
     putPoint(point) {
@@ -64,5 +78,6 @@ const squareSolid = {
         canvas[0].addEventListener('mousedown', this.engage);
         canvas[0].addEventListener('mousemove', this.putPoint);
         canvas[0].addEventListener('mouseup', this.disengage);
+        canvas[0].addEventListener('mouseleave', this.leave);
     }
 }

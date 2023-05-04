@@ -19,8 +19,17 @@ const segment = {
     },
 
     disengage() {
-        dragging = false;
-        cPush();
+        if (dragging) {
+            dragging = false;
+            cPush();
+        }
+    },
+
+    leave() {
+        if (dragging) {
+            dragging = false;
+            cPush();
+        }
     },
 
     putPoint(point){
@@ -40,5 +49,6 @@ const segment = {
         canvas[0].addEventListener('mousedown', this.engage);
         canvas[0].addEventListener('mouseup', this.disengage);
         canvas[0].addEventListener('mousemove', this.putPoint);
+        canvas[0].addEventListener('mouseleave', this.leave);
     }   
 }
