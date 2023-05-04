@@ -1,14 +1,14 @@
-let startXY;
+let startSquareXY;
 
 let squareEngage = (point) => {
     dragging = true;
-    startXY = [point.clientX - rect.left, point.clientY - rect.top];
+    startSquareXY = [point.clientX - rect.left, point.clientY - rect.top];
 }
 
 let squareDisengage = (point) => {
     dragging = false;
         
-    let [x,y] = startXY;
+    let [x,y] = startSquareXY;
     let w = (point.clientX - rect.left) - x;
     let h = (point.clientY - rect.top) - y;
     
@@ -44,7 +44,7 @@ const squareSolid = {
         let [x,y,w,h] = squareDisengage(point);
         ctx.strokeRect(x,y,w,h);
         ctx.fillRect(x,y,w,h);
-        
+
         cPush();
     },
 
