@@ -2,8 +2,8 @@
 
     engage(point) {
         dragging = true;
-        eraser.putPoint(point);
         ctx.globalCompositeOperation="destination-out";
+        eraser.putPoint(point);
     },
 
     disengage() {
@@ -16,7 +16,6 @@
 
     putPoint(point) {
         if(dragging) {
-            
             ctx.lineTo(point.clientX - rect.left, point.clientY - rect.top);
             ctx.stroke();
             ctx.beginPath();

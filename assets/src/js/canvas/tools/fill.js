@@ -5,7 +5,7 @@ const fill = {
         const x = event.clientX  - rect.left;
         const y = event.clientY - rect.top;
     
-        floodFill.fill(x, y, 0, ctx);
+        floodFill.fill(x, y, 100, ctx, 1);
         
         cPush();
     },
