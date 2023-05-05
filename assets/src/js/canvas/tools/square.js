@@ -1,15 +1,19 @@
+/**
+ * Implementation of the square tool
+ */
+
 let startSquareXY;
 
-let squareEngage = (point) => {
+let squareEngage = () => {
     dragging = true;
-    startSquareXY = [point.clientX - rect.left, point.clientY - rect.top];
+    startSquareXY = [mouseX, mouseY];
     snapshot = ctx.getImageData(0, 0, canvasWidth, canvasHeight);
 }
 
-let squarePutPoint = (point) => {
+let squarePutPoint = () => {
     let [x,y] = startSquareXY;
-    let w = (point.clientX - rect.left) - x;
-    let h = (point.clientY - rect.top) - y;
+    let w = (mouseX) - x;
+    let h = (mouseY) - y;
     
     return [x,y,w,h];
 }
@@ -23,22 +27,18 @@ let squareDisengage = () => {
 
 const squareRegular = {
 
-    engage(point) {
-        squareEngage(point);
+    engage() {
+        squareEngage();
     },
 
     disengage() {
         squareDisengage();
     },
 
-    leave() {
-        squareDisengage();
-    },
-
-    putPoint(point) {
+    putPoint() {
         if (dragging){
             ctx.putImageData(snapshot, 0, 0); 
-            let [x,y,w,h] = squarePutPoint(point);
+            let [x,y,w,h] = squarePutPoint();
             ctx.strokeRect(x,y,w,h);
         }
     },
@@ -47,28 +47,24 @@ const squareRegular = {
         canvas[0].addEventListener('mousedown', this.engage);
         canvas[0].addEventListener('mousemove', this.putPoint);
         canvas[0].addEventListener('mouseup', this.disengage);
-        canvas[0].addEventListener('mouseleave', this.leave);
+        canvas[0].addEventListener('mouseleave', this.disengage);
     }
 }
 
 const squareSolid = {
     
-    engage(point) {
-        squareEngage(point);
+    engage() {
+        squareEngage();
     },
 
     disengage() {
         squareDisengage();
     },
 
-    leave() {
-        squareDisengage();
-    },
-
-    putPoint(point) {
+    putPoint() {
         if (dragging){
             ctx.putImageData(snapshot, 0, 0); 
-            let [x,y,w,h] = squarePutPoint(point);
+            let [x,y,w,h] = squarePutPoint();
             ctx.strokeRect(x,y,w,h);
             ctx.fillRect(x,y,w,h);
         }
@@ -78,6 +74,6 @@ const squareSolid = {
         canvas[0].addEventListener('mousedown', this.engage);
         canvas[0].addEventListener('mousemove', this.putPoint);
         canvas[0].addEventListener('mouseup', this.disengage);
-        canvas[0].addEventListener('mouseleave', this.leave);
+        canvas[0].addEventListener('mouseleave', this.disengage);
     }
 }

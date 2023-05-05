@@ -94,9 +94,12 @@
   width: 100%;
 }
 .wrapper .main .canvas {
-  width: 100%;
+  position: relative;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 .wrapper .main .canvas canvas {
+  position: absolute;
   cursor: crosshair;
 }
 .wrapper .footer {

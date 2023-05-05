@@ -1,8 +1,12 @@
+/**
+ * Changing color script
+ */
+
 let colorPicker = document.getElementsByClassName('sidebar__color');
 
-let updateAll = (event) => {
-    ctx.fillStyle = event.target.value;
-    ctx.strokeStyle = event.target.value;
+let updateAll = () => {
+    ctx.fillStyle = colorPicker[0].value;
+    ctx.strokeStyle = colorPicker[0].value;
 }
 
 colorPicker[0].value = '#000';

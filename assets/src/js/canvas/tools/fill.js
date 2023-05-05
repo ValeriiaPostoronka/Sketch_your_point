@@ -1,12 +1,12 @@
+/**
+ * Implementation of the fill tool
+ */
+
 const fill = {
     
-    click(event) {
-        
-        const x = event.clientX  - rect.left;
-        const y = event.clientY - rect.top;
-    
-        floodFill.fill(x, y, 100, ctx, 1);
-        
+    click() {    
+        floodFill.fill(mouseX, mouseY, 100, ctx, 1);
+
         cPush();
     },
 

@@ -1,8 +1,12 @@
+/**
+ * Implementation of the pen tool
+ */
+
 const pen = {
 
-    engage(point) {
+    engage() {
         dragging = true;
-        pen.putPoint(point);
+        pen.putPoint();
     },
 
     disengage() {
@@ -14,24 +18,15 @@ const pen = {
         }
     },
 
-    leave() {
-        if (dragging) {
-            dragging = false;
-            ctx.beginPath();
-            
-            cPush();
-        }
-    },
-
-    putPoint(point) {
+    putPoint() {
         if(dragging) {
-            ctx.lineTo(point.clientX - rect.left, point.clientY - rect.top);
+            ctx.lineTo(mouseX, mouseY);
             ctx.stroke();
             ctx.beginPath();
-            ctx.arc(point.clientX - rect.left, point.clientY - rect.top, radius, 0, Math.PI*2);
+            ctx.arc(mouseX, mouseY, radius, 0, Math.PI*2);
             ctx.fill();
             ctx.beginPath();
-            ctx.moveTo(point.clientX - rect.left, point.clientY - rect.top);
+            ctx.moveTo(mouseX, mouseY);
         }
     },
 
@@ -39,6 +34,6 @@ const pen = {
         canvas[0].addEventListener('mousedown', this.engage);
         canvas[0].addEventListener('mousemove', this.putPoint);
         canvas[0].addEventListener('mouseup', this.disengage);
-        canvas[0].addEventListener('mouseleave', this.leave);
+        canvas[0].addEventListener('mouseleave', this.disengage);
     }
 };

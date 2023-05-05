@@ -108,9 +108,12 @@
         }
             
         .canvas {
-            width: 100%;
+            position: relative;
+            overflow-x: auto;
+            white-space: nowrap;
 
             canvas {
+                position: absolute;
                 cursor: crosshair;
             }
         }
