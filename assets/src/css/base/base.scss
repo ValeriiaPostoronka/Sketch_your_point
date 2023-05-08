@@ -1,7 +1,20 @@
 /**
  * Custom CSS properties.
  */
+ /* Include text font */
+ @font-face {
+    font-family: 'Rubik';
+    src: url('/assets/fonts/Rubik-VariableFont_wght.ttf') format('truetype');
+}
+
  :root {
+    /* Text font */
+    --family: 'Rubik';
+
+    /* Wrappers */
+    --container: 1176px;
+    --wrapper: 744px;
+
     /* Font size */
     --fs-base: 16px;
 
@@ -44,4 +57,5 @@
     --c-02: #F7F2EF;
     --c-03: #E0E0E0;
     --c-04: #C1C9CC;
+    --c-05: #30506b;
 }
