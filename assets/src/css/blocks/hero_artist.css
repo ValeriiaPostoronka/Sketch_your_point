@@ -1,0 +1,29 @@
+.section.section-hero_artist {
+  margin-top: var(--sp-section);
+  margin-bottom: var(--sp-section);
+}
+.section.section-hero_artist .container {
+  max-width: var(--container);
+  padding: 0 var(--sp-xl) 0 var(--sp-xl);
+  margin: auto;
+}
+.section.section-hero_artist .container .section__inner {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: var(--gap-m);
+}
+@media (max-width: 768px) {
+  .section.section-hero_artist .container .section__inner {
+    flex-direction: column;
+  }
+}
+.section.section-hero_artist .container .section__text {
+  flex: 2;
+}
+.section.section-hero_artist .container .section__image {
+  flex: 1;
+}
+.section.section-hero_artist .container .section__image img {
+  border-radius: 50%;
+}/*# sourceMappingURL=hero_artist.css.map */

@@ -12,6 +12,7 @@
   /* Wrappers */
   --container: 1176px;
   --wrapper: 744px;
+  --sp-section: 56px;
   /* Font size */
   --fs-base: 16px;
   --fs-xs: calc(var(--fs-base) * 0.75);
@@ -29,9 +30,9 @@
   --sp-xxl: calc(var(--sp) * 2);
   /* Gaps */
   --gap-base: 16px;
-  --gap-xs: calc(var(--gap) / 2);
-  --gap-m: var(--gap);
-  --gap-xl: calc(var(--gap) * 2);
+  --gap-xs: calc(var(--gap-base) / 2);
+  --gap-m: var(--gap-base);
+  --gap-xl: calc(var(--gap-base) * 2);
   /* Radius */
   --br-base: 4px;
   --br-xs: calc(var(--br-base) / 2);

@@ -10,8 +10,18 @@
     <link rel="stylesheet" type="text/css" href="./../../assets/src/css/elements/button.css">
     <link rel="stylesheet" type="text/css" href="./../../assets/src/css/elements/title.css">
     <link rel="stylesheet" type="text/css" href="./../../assets/src/css/elements/subtitle.css">
+    <link rel="stylesheet" type="text/css" href="./../../assets/src/css/elements/image.css">
+    <link rel="stylesheet" type="text/css" href="./../../assets/src/css/blocks/hero_artist.css">
+    <link rel="stylesheet" type="text/css" href="./../../assets/src/css/blocks/grid_drawing.css">
 </head>
 <body>
     <?php include '../blocks/hero_artist.php' ?>
+    <?php $list = array(
+
+    );
+
+    ?>
+    <?php include '../blocks/grid_drawing.php' ?>
+    <script src="../../assets/src/js/fslightbox.js"></script>
 </body>
 </html>

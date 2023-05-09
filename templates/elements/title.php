@@ -1,2 +1,2 @@
-<!-- title - content of the h1 tag -->
-<h1 class="section__title"><?php echo $title; ?></h1>
+<!-- title - content of the h2 tag -->
+<h2 class="section__title"><?php echo $title; ?></h2>

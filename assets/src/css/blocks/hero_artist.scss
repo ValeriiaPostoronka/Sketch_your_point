@@ -1,0 +1,33 @@
+.section.section-hero_artist {
+    margin-top: var(--sp-section);
+    margin-bottom: var(--sp-section);
+
+    .container {
+        max-width: var(--container);
+        padding: 0 var(--sp-xl) 0 var(--sp-xl);
+        margin: auto;
+
+        .section__inner {
+            display: flex; 
+            justify-content: space-around;
+            align-items: center;
+            gap: var(--gap-m);
+    
+            @media (max-width: 768px) {
+                flex-direction: column;
+            }
+        }
+    
+        .section__text {
+            flex: 2;
+        }
+    
+        .section__image {
+            flex: 1;
+
+            img {
+                border-radius: 50%;
+            }
+        }
+    }
+}
