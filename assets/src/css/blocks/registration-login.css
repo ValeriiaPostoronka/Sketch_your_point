@@ -1,9 +1,11 @@
-#modal-registration .modal {
+.modal {
   display: none;
 }
-#modal-registration .modal.is-open {
+
+.modal.is-open {
   display: block;
 }
+
 #modal-registration .modal__overlay {
   position: fixed;
   top: 0;

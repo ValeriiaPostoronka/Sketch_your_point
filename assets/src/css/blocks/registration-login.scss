@@ -1,12 +1,12 @@
-#modal-registration {
+.modal {
+    display: none;
+}
 
-    .modal {
-        display: none;
-    }
-    
-    .modal.is-open {
-        display: block;
-    }
+.modal.is-open {
+    display: block;
+}
+
+#modal-registration {
 
     .modal__overlay {
         position: fixed;
