@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,10 +16,14 @@
     <link rel="stylesheet" type="text/css" href="/assets/src/css/blocks/registration-login.css">
 </head>
 <body>
-    <?php include 'templates/blocks/cards.php' ?>
-    <?php $href = "#open-modal"; $button = "Log in"; include 'templates/elements/buttons.php' ?>
-    <?php include 'templates/blocks/login.php' ?>
+    <?php include 'templates/blocks/cards.php'; ?>
+    <?php if (!isset($_SESSION["user"])) { $href = "#open-modal-log"; $button = "Log in"; include 'templates/elements/buttons.php'; ?>
+    <?php include 'templates/blocks/login.php';} else { ?>
+    <?php $href = "templates/blocks/script/logout.php"; $button = "Log out"; include 'templates/elements/buttons.php'; }?>
+    <?php $href = "#open-modal-reg"; $button = "Register"; include 'templates/elements/buttons.php'; ?>
+    <?php include 'templates/blocks/registration.php';?>
     <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
     <script src="/assets/src/js/blocks/login.js"></script>
+    <script src="/assets/src/js/blocks/registration.js"></script>
 </body>
 </html>

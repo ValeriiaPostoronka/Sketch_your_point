@@ -6,7 +6,7 @@
   display: block;
 }
 
-#modal-registration .modal__overlay {
+#modal-registration .modal__overlay, #modal-login .modal__overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -18,7 +18,7 @@
   align-items: center;
   z-index: 10;
 }
-#modal-registration .modal__container {
+#modal-registration .modal__container, #modal-login .modal__container {
   background: var(--c-03);
   border-radius: var(--br-m);
   border: 2px solid var(--c-04);
@@ -29,11 +29,11 @@
   position: absolute;
 }
 @media (max-width: 576px) {
-  #modal-registration .modal__container {
+  #modal-registration .modal__container, #modal-login .modal__container {
     padding: 48px var(--sp-l);
   }
 }
-#modal-registration .modal__container .modal__wrapper .modal__header .modal__close {
+#modal-registration .modal__container .modal__wrapper .modal__header .modal__close, #modal-login .modal__container .modal__wrapper .modal__header .modal__close {
   filter: invert(26%) sepia(34%) saturate(713%) hue-rotate(165deg) brightness(95%) contrast(88%);
   border: unset;
   position: absolute;
@@ -46,15 +46,21 @@
   background-repeat: no-repeat;
   background-position: center;
 }
-#modal-registration .modal__container .modal__wrapper .modal__content .form__element {
+#modal-registration .modal__container .modal__wrapper .modal__content .alert, #modal-login .modal__container .modal__wrapper .modal__content .alert {
+  color: red;
+}
+#modal-registration .modal__container .modal__wrapper .modal__content .hidden, #modal-login .modal__container .modal__wrapper .modal__content .hidden {
+  display: none;
+}
+#modal-registration .modal__container .modal__wrapper .modal__content .form__element, #modal-login .modal__container .modal__wrapper .modal__content .form__element {
   margin: var(--sp-l) 0 var(--sp-l) 0;
 }
-#modal-registration .modal__container .modal__wrapper .modal__content .form__element label {
+#modal-registration .modal__container .modal__wrapper .modal__content .form__element label, #modal-login .modal__container .modal__wrapper .modal__content .form__element label {
   font-family: var(--family);
   font-size: var(--fs-l);
   color: var(--c-05);
 }
-#modal-registration .modal__container .modal__wrapper .modal__content .form__element input {
+#modal-registration .modal__container .modal__wrapper .modal__content .form__element input, #modal-login .modal__container .modal__wrapper .modal__content .form__element input {
   border: 2px solid var(--c-04);
   border-radius: var(--br-m);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.16), 0 2px 4px 1px rgba(0, 0, 0, 0.08);
@@ -66,6 +72,6 @@
   padding: var(--sp-m) var(--sp-l);
   width: -webkit-fill-available;
 }
-#modal-registration .modal__container .modal__wrapper .modal__content .section__actions {
+#modal-registration .modal__container .modal__wrapper .modal__content .section__actions, #modal-login .modal__container .modal__wrapper .modal__content .section__actions {
   margin-bottom: unset;
 }/*# sourceMappingURL=registration-login.css.map */

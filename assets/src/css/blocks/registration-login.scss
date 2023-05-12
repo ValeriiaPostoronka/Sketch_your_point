@@ -6,7 +6,7 @@
     display: block;
 }
 
-#modal-registration {
+#modal-registration, #modal-login {
 
     .modal__overlay {
         position: fixed;
@@ -55,6 +55,14 @@
             }
 
             .modal__content {
+
+                .alert {
+                    color: red;
+                }
+
+                .hidden {
+                    display: none;
+                }
 
                 .form {
     
