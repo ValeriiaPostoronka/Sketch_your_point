@@ -1,0 +1,131 @@
+.wrapper {
+  min-height: 100vh;
+  display: grid;
+  grid-template: minmax(70px, auto) 1fr minmax(70px, auto)/1fr;
+  grid-template-areas: "header" "main" "footer";
+}
+.wrapper .main {
+  height: 80vh;
+  display: grid;
+  grid-area: main;
+  grid-template: 1fr/minmax(auto, 300px) 1fr;
+}
+.wrapper .main .tasks {
+  height: 80vh;
+  background-color: var(--c-01);
+  padding: var(--sp-l);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.wrapper .main .tasks__search {
+  display: flex;
+  align-items: center;
+  max-width: 208px;
+}
+.wrapper .main .tasks__search-field {
+  border: 2px solid var(--c-04);
+  border-radius: var(--br-m);
+  caret-color: var(--c-05);
+  height: 40px;
+  outline: none;
+  padding-left: var(--sp-xxl);
+  padding-right: var(--sp-xl);
+  position: relative;
+  width: 100%;
+  z-index: 3;
+  box-shadow: var(--shadow);
+}
+.wrapper .main .tasks__search .fa-magnifying-glass {
+  cursor: pointer;
+  margin-left: var(--sp-s);
+  position: absolute;
+  z-index: 4;
+  color: var(--c-05);
+}
+.wrapper .main .tasks__sorting {
+  display: flex;
+}
+.wrapper .main .tasks__sorting-list {
+  border-radius: var(--br-m);
+  border: 2px solid var(--c-04);
+  box-shadow: var(--shadow);
+}
+.wrapper .main .tasks__list {
+  display: flex;
+  flex-direction: column;
+}
+.wrapper .main .tasks__list-item {
+  display: flex;
+  gap: var(--gap-xs);
+  align-items: center;
+  background: var(--c-03);
+  border-radius: var(--br-m);
+  border: 2px solid var(--c-04);
+  padding: var(--sp-s) var(--sp-xl) var(--sp-s) var(--sp-s);
+  margin-bottom: var(--sp-l);
+  box-shadow: var(--shadow);
+}
+.wrapper .main .tasks__list-item .item__evaluation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wrapper .main .tasks__list-item .item__evaluation-number {
+  font-family: var(--family);
+  font-size: var(--fs-m);
+  font-weight: 700;
+}
+.wrapper .main .tasks__list-item .item__evaluation .fa-caret-up,
+.wrapper .main .tasks__list-item .item__evaluation .fa-caret-down {
+  color: var(--c-05);
+  cursor: pointer;
+}
+.wrapper .main .tasks__list-item .item__evaluation .fa-caret-up:hover {
+  color: var(--c-green);
+}
+.wrapper .main .tasks__list-item .item__evaluation .fa-caret-down:hover {
+  color: var(--c-red);
+}
+.wrapper .main .tasks__list-item .item__description {
+  font-family: var(--family);
+  font-size: var(--fs-s);
+  font-weight: 200;
+  font-style: italic;
+}
+.wrapper .main .tasks__text {
+  display: flex;
+}
+.wrapper .main .tasks__text-field {
+  resize: none;
+  border: 2px solid var(--c-04);
+  border-radius: var(--br-m);
+  box-shadow: var(--shadow);
+  margin-right: var(--sp-s);
+}
+.wrapper .main .tasks__text textarea {
+  font-family: var(--family);
+  font-size: var(--fs-m);
+  font-weight: 100;
+  font-style: italic;
+  padding: var(--sp-m) var(--sp-l);
+}
+.wrapper .main .tasks__text .section__actions {
+  margin: auto;
+}
+.wrapper .main .tasks__text .section__actions .button {
+  padding: var(--sp-s) var(--sp-l);
+  background: var(--c-03);
+  color: var(--c-01);
+}
+.wrapper .main .tasks__text .section__actions .button:hover {
+  background: var(--c-02);
+}
+.wrapper .main .tasks label {
+  font-family: var(--family);
+  font-size: var(--fs-l);
+  color: var(--c-04);
+}
+.wrapper .main .page {
+  overflow-y: auto;
+}/*# sourceMappingURL=tasks.css.map */

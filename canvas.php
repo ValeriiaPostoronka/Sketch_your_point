@@ -8,19 +8,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="./../assets/src/css/base/base.css">
     <link rel="stylesheet" type="text/css" href="./../assets/src/css/canvas.css">
+    <link rel="stylesheet" type="text/css" href="./../../assets/src/css/base/header.css">
+    <link rel="stylesheet" type="text/css" href="./../../assets/src/css/base/footer.css">
     <script src="https://unpkg.com/vb-canvas/dist/vb-canvas.min.js"></script>
     <script src="https://kit.fontawesome.com/5f551754c5.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="wrapper">
-        <header class="header">
-            <a href="" class="header__logo">
-                <i class="fa-solid fa-paintbrush fa-2xl fa-beat-fade"></i>
-            </a>
-            <div class="header__task">
-                Lorem ipsum dolor sit amet.
-            </div>
-        </header>
+        <?php include './templates/header.php' ?>
+
         <main class="main">
             <aside class="sidebar">
                 <nav class="sidebar__menu">
@@ -58,20 +54,14 @@
                     </ul>
                     <input type="range" class="sidebar__range" min="3" max="30" orient="vertical" value="10">
                 </nav>
-                <input type="color" class="sidebar__color"">
+                <input type="color" class="sidebar__color">
             </aside>
             <div class="canvas">
                 <canvas></canvas>
             </div>
         </main>
-        <footer class="footer">
-            <div class="footer__copy">
-                Copy, 2023
-            </div>
-            <div class="footer__text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            </div>
-        </footer>
+
+        <?php include './templates/footer.php' ?>
     </div>
     <script src="./../assets/src/js/canvas/floodFill2D.js"></script>
     <script src="./../assets/src/js/canvas/canvas.js"></script>

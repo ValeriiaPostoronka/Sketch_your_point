@@ -25,9 +25,8 @@
                 if ($prepareStmt) {
                     mysqli_stmt_bind_param($stmt, "sss", $email, $username, $password_hash);
                     mysqli_stmt_execute($stmt);
-                    //all good
                     ?>
-                    <div class='success'>Registration is successful!</div>
+                    <script>window.onload = () => {alert('Registration is successful');}</script>
                     <?php
                 }
                 else {

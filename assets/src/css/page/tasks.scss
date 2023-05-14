@@ -1,0 +1,160 @@
+.wrapper {
+    min-height: 100vh; 
+    display: grid;
+    grid-template: minmax(70px, auto) 1fr minmax(70px, auto) / 1fr; 
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+
+    .main {
+        height: 80vh; 
+        display: grid;
+        grid-area: main;
+        grid-template: 1fr / minmax(auto, 300px) 1fr;
+        
+        .tasks {
+            height: 80vh; 
+            background-color: var(--c-01);
+            padding: var(--sp-l);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            &__search {
+                display: flex;
+                align-items: center;
+                max-width: 208px;
+
+                &-field {
+                    border: 2px solid var(--c-04);
+                    border-radius: var(--br-m);
+                    caret-color: var(--c-05);
+                    height: 40px;
+                    outline: none;
+                    padding-left: var(--sp-xxl);
+                    padding-right: var(--sp-xl);
+                    position: relative;
+                    width: 100%;
+                    z-index: 3;
+                    box-shadow: var(--shadow);
+                }
+
+                .fa-magnifying-glass {
+                    cursor: pointer;
+                    margin-left: var(--sp-s);
+                    position: absolute;
+                    z-index: 4;
+                    color: var(--c-05);
+                }
+            }
+            
+            &__sorting {
+                display: flex;
+
+                &-list {
+                    border-radius: var(--br-m);
+                    border: 2px solid var(--c-04);
+                    box-shadow: var(--shadow);
+                }
+            }
+
+            &__list {
+                display: flex;
+                flex-direction: column;
+
+                &-item {
+                    display: flex;
+                    gap: var(--gap-xs);
+                    align-items: center;
+                    background: var(--c-03);
+                    border-radius: var(--br-m);
+                    border: 2px solid var(--c-04);
+                    padding: var(--sp-s) var(--sp-xl) var(--sp-s) var(--sp-s);
+                    margin-bottom: var(--sp-l);
+                    box-shadow: var(--shadow);
+
+                    .item {
+
+                        &__evaluation {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+
+                            &-number {
+                                font-family: var(--family);
+                                font-size: var(--fs-m);
+                                font-weight: 700;
+                            }
+
+                            .fa-caret-up,
+                            .fa-caret-down {
+                                color: var(--c-05);
+                                cursor: pointer;
+                            }
+
+                            .fa-caret-up:hover {
+                                color: var(--c-green);
+                            }
+
+                            .fa-caret-down:hover {
+                                color: var(--c-red);
+                            }
+                        }
+
+                        &__description {
+                            font-family: var(--family);
+                            font-size: var(--fs-s);
+                            font-weight: 200;
+                            font-style: italic;
+                        }
+                    }
+                }
+            }
+
+            &__text {
+                display: flex;
+
+                &-field {
+                    resize: none;
+                    border: 2px solid var(--c-04);
+                    border-radius: var(--br-m);
+                    box-shadow: var(--shadow);
+                    margin-right: var(--sp-s);
+                }
+                
+                textarea {
+                    font-family: var(--family);
+                    font-size: var(--fs-m);
+                    font-weight: 100;
+                    font-style: italic;
+                    padding: var(--sp-m) var(--sp-l);
+                }
+
+                .section__actions {
+                    margin: auto;
+
+                    .button {
+                        padding: var(--sp-s) var(--sp-l);
+                        background: var(--c-03);
+                        color: var(--c-01);
+
+                        &:hover {
+                            background: var(--c-02);
+                        }                        
+                    }
+                }
+            }
+
+            label {
+                font-family: var(--family);
+                font-size: var(--fs-l);
+                color: var(--c-04);
+            }
+        }
+
+        .page {
+            overflow-y: auto;
+        }
+    }
+}

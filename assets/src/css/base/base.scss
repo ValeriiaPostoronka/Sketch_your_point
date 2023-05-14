@@ -11,6 +11,9 @@
     /* Text font */
     --family: 'Rubik';
 
+    /* Shadow */
+    --shadow: 0 0 1px rgba(0, 0, 0, 0.16), 0 2px 4px 1px rgba(0, 0, 0, 0.08);
+
     /* Wrappers */
     --container: 1176px;
     --wrapper: 744px;
@@ -54,6 +57,8 @@
     /* Colors */
     --c-white: #FFF;
     --c-black: #000;
+    --c-green: #7DA38C;
+    --c-red: #B51D46;
     --c-01: #547793;
     --c-02: #F7F2EF;
     --c-03: #E0E0E0;

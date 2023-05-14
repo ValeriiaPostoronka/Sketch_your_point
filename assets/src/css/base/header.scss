@@ -1,0 +1,40 @@
+.header {
+    background-color: var(--c-04);
+}
+
+.wrapper .fa-2xl {
+    line-height: unset;
+    vertical-align: unset;
+}
+        
+.header {
+    display: grid;
+    grid-area: header;
+    padding: var(--sp-l);
+    grid-template: 1fr / 1fr minmax(auto, 300px) minmax(auto, 1100px) 1fr;
+    align-items: center;
+    
+    &__logo {
+        width: max-content;
+        height: max-content;
+        border-radius: 50%;
+        background-color: var(--c-02);
+        grid-column: 2 / 3;
+
+        .fa-beat-fade {
+            color: #547793;
+            animation-name: none;
+
+            &:hover {
+                animation-name: fa-beat-fade;
+            }
+        }
+    }
+    
+    &__task {
+        color: var(--c-white);
+        font-size: var(--fs-l);
+        grid-column: 3 / 4;
+        font-family: var(--family);
+    }
+}
