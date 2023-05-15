@@ -1,17 +1,16 @@
 .wrapper {
   min-height: 100vh;
   display: grid;
-  grid-template: minmax(70px, auto) 1fr minmax(70px, auto)/1fr;
+  grid-template: minmax(70px, auto) 75vh minmax(70px, auto)/1fr;
   grid-template-areas: "header" "main" "footer";
 }
 .wrapper .main {
-  height: 80vh;
   display: grid;
   grid-area: main;
   grid-template: 1fr/minmax(auto, 300px) 1fr;
+  overflow: auto;
 }
 .wrapper .main .tasks {
-  height: 80vh;
   background-color: var(--c-01);
   padding: var(--sp-l);
   display: flex;
@@ -22,6 +21,7 @@
   display: flex;
   align-items: center;
   max-width: 208px;
+  position: relative;
 }
 .wrapper .main .tasks__search-field {
   border: 2px solid var(--c-04);
@@ -35,6 +35,7 @@
   width: 100%;
   z-index: 3;
   box-shadow: var(--shadow);
+  font-family: var(--family);
 }
 .wrapper .main .tasks__search .fa-magnifying-glass {
   cursor: pointer;
@@ -46,7 +47,12 @@
 .wrapper .main .tasks__sorting {
   display: flex;
 }
+.wrapper .main .tasks__sorting label {
+  margin-right: var(--sp-xs);
+}
 .wrapper .main .tasks__sorting-list {
+  cursor: pointer;
+  font-family: var(--family);
   border-radius: var(--br-m);
   border: 2px solid var(--c-04);
   box-shadow: var(--shadow);
@@ -121,11 +127,11 @@
 .wrapper .main .tasks__text .section__actions .button:hover {
   background: var(--c-02);
 }
+.wrapper .main .tasks__text .fa-arrow-turn-up {
+  color: var(--c-05);
+}
 .wrapper .main .tasks label {
   font-family: var(--family);
-  font-size: var(--fs-l);
+  font-size: var(--fs-m);
   color: var(--c-04);
-}
-.wrapper .main .page {
-  overflow-y: auto;
 }/*# sourceMappingURL=tasks.css.map */

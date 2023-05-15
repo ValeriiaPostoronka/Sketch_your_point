@@ -1,20 +1,19 @@
 .wrapper {
     min-height: 100vh; 
     display: grid;
-    grid-template: minmax(70px, auto) 1fr minmax(70px, auto) / 1fr; 
+    grid-template: minmax(70px, auto) 75vh minmax(70px, auto) / 1fr; 
     grid-template-areas: 
         "header"
         "main"
         "footer";
 
     .main {
-        height: 80vh; 
         display: grid;
         grid-area: main;
         grid-template: 1fr / minmax(auto, 300px) 1fr;
+        overflow: auto;
         
         .tasks {
-            height: 80vh; 
             background-color: var(--c-01);
             padding: var(--sp-l);
             display: flex;
@@ -25,6 +24,7 @@
                 display: flex;
                 align-items: center;
                 max-width: 208px;
+                position: relative;
 
                 &-field {
                     border: 2px solid var(--c-04);
@@ -38,6 +38,7 @@
                     width: 100%;
                     z-index: 3;
                     box-shadow: var(--shadow);
+                    font-family: var(--family);
                 }
 
                 .fa-magnifying-glass {
@@ -52,7 +53,13 @@
             &__sorting {
                 display: flex;
 
+                label {
+                    margin-right: var(--sp-xs);
+                }
+
                 &-list {
+                    cursor: pointer;
+                    font-family: var(--family);
                     border-radius: var(--br-m);
                     border: 2px solid var(--c-04);
                     box-shadow: var(--shadow);
@@ -62,6 +69,7 @@
             &__list {
                 display: flex;
                 flex-direction: column;
+                // overflow-y: auto;
 
                 &-item {
                     display: flex;
@@ -144,17 +152,21 @@
                         }                        
                     }
                 }
+
+                .fa-arrow-turn-up {
+                    color: var(--c-05);
+                }
             }
 
             label {
                 font-family: var(--family);
-                font-size: var(--fs-l);
+                font-size: var(--fs-m);
                 color: var(--c-04);
             }
         }
 
         .page {
-            overflow-y: auto;
+            // overflow-y: auto;
         }
     }
 }
