@@ -10,10 +10,7 @@
     <title>Canvas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="/assets/src/css/base/base.css">
-    <link rel="stylesheet" type="text/css" href="/assets/src/css/elements/title.css">
     <link rel="stylesheet" type="text/css" href="/assets/src/css/blocks/cards.css">
-    <link rel="stylesheet" type="text/css" href="/assets/src/css/elements/button.css">
-    <link rel="stylesheet" type="text/css" href="/assets/src/css/blocks/registration-login.css">
 </head>
 <body>
     <?php include 'templates/blocks/cards.php'; ?>
@@ -22,14 +19,12 @@
     { 
         $href = "templates/blocks/script/logout.php"; $button = "Log out"; 
         include 'templates/elements/buttons.php';
+        $href = "templates/pages/artist.php"; $button = "Сторінка користувача"; 
+        include 'templates/elements/buttons.php';
     } 
     else 
     { 
-        $href = "#open-modal-log"; $button = "Log in"; 
-        include 'templates/elements/buttons.php'; 
         include 'templates/blocks/login.php'; 
-        $href = "#open-modal-reg"; $button = "Register";
-        include 'templates/elements/buttons.php'; 
         include 'templates/blocks/registration.php';         
     }
     ?>

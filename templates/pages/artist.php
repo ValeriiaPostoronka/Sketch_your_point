@@ -1,3 +1,9 @@
+<?php
+  session_start();  
+
+  if (isset($_SESSION["user"])) {
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,20 +23,25 @@
 </head>
 <body>
     <div class="wrapper">
-        <?php include '../header.php' ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/header.php'; ?>
 
         <main class="main">
-        <?php include '../blocks/tasks.php' ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/blocks/tasks.php'; ?>
             <div class="page">
-                <?php include '../blocks/hero_artist.php' ?>
-                <?php include '../blocks/grid_drawing.php' ?>
+                <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/blocks/hero_artist.php'; ?>
+                <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/blocks/grid_drawing.php' ?>
             </div>
         </main>
 
-        <?php include '../footer.php' ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/footer.php' ?>
     </div>
 
     <script src="../../assets/src/js/blocks/tasks.js"></script>
     <script src="../../assets/src/js/fslightbox.js"></script>
 </body>
 </html>
+<?php 
+  } else {
+    header("Location: http://".$_SERVER['HTTP_HOST']);
+  }
+?>

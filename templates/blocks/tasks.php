@@ -1,11 +1,4 @@
 <?php
-function debug_to_console($data) {
-    $output = $data;
-    if (is_array($output))
-        $output = implode(',', $output);
-
-    echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
-}
     if (isset($_POST["task"])) {
         $task = $_POST["task"];
         
@@ -78,7 +71,7 @@ function debug_to_console($data) {
     <form class="tasks__text" id="submit-form" aria-label="Contact form" method="post" action="">
         <textarea class="tasks__text-field" placeholder="Моє завдання..." name="task"></textarea>
         <div class="section__actions">
-            <?php $href = "#send-task"; $button = "<i class='fa-solid fa-arrow-turn-up'></i>"; include '../../templates/elements/buttons.php'; ?>
+            <?php $href = "#send-task"; $button = "<i class='fa-solid fa-arrow-turn-up'></i>"; include $_SERVER['DOCUMENT_ROOT'].'/templates/elements/buttons.php'; ?>
         </div>
     </form>
 </aside>

@@ -1,3 +1,19 @@
+<?php 
+    $href = "#open-modal-log"; $button = "Log in"; 
+    include $_SERVER["DOCUMENT_ROOT"].'/templates/elements/buttons.php'; 
+?>
+
+<script>
+    <?php $link = "http://".$_SERVER['HTTP_HOST']."/assets/src/css/blocks/registration-login.css"; ?>
+    if (document.querySelector("link[href='<?php echo $link; ?>']") === null) {
+        let link = document.createElement("link");
+        link.setAttribute("rel", "stylesheet");
+        link.setAttribute ("type", "text/css");
+        link.setAttribute ("href", "<?php echo $link; ?>");
+        document.getElementsByTagName("head")[0].appendChild(link);
+    }
+</script>
+
 <section class="section section-login">
     <?php
         if (isset($_POST["username"]) && !isset($_POST["email"])) {
@@ -39,7 +55,7 @@
 
                     <main class="modal__content">
                         <div class="form-wrapper">
-                            <?php $title = "Log in Form"; include 'templates/elements/title.php'; ?>
+                            <?php $title = "Log in Form"; include $_SERVER["DOCUMENT_ROOT"].'/templates/elements/title.php'; ?>
                         </div>
 
                         <form id="login-form" class="form" aria-label="Contact form" method="post" action="">
@@ -55,7 +71,7 @@
                                 <input type="password" placeholder="Password" name="password">
                             </div>
                             <div class="form__element section__actions">
-                                <?php $href = "#submit-login"; $button = "Log in"; include 'templates/elements/buttons.php'; ?>
+                                <?php $href = "#submit-login"; $button = "Log in"; include $_SERVER["DOCUMENT_ROOT"].'/templates/elements/buttons.php'; ?>
                             </div>
                         </form>
                     </main>

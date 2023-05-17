@@ -1,3 +1,8 @@
+<?php
+    $href = "#open-modal-reg"; $button = "Register";
+    include 'templates/elements/buttons.php'; 
+?>
+
 <section class="section section-reg">
     <?php
         if (isset($_POST["email"])) {
@@ -6,7 +11,7 @@
             $password = $_POST["password"];
             $password_hash = password_hash($password, PASSWORD_DEFAULT);
             
-            require_once 'templates/blocks/script/database.php';
+            require_once $_SERVER['DOCUMENT_ROOT'].'/templates/blocks/script/database.php';
 
             $sql = "SELECT * FROM Users WHERE email = '$email'";
             $result = mysqli_query($conn, $sql);
@@ -46,7 +51,7 @@
 
                     <main class="modal__content">
                         <div class="form-wrapper">
-                            <?php $title = "Registration"; include 'templates/elements/title.php'; ?>
+                            <?php $title = "Registration"; include $_SERVER['DOCUMENT_ROOT'].'/templates/elements/title.php'; ?>
                         </div>
 
                         <form id="registration-form" class="form" aria-label="Contact form" method="post" action="">
@@ -75,7 +80,7 @@
                                 <input type="password" placeholder="Password" name="repeatPassword">
                             </div>
                             <div class="form__element section__actions">
-                                <?php $href = "#submit-registration"; $button = "Registration"; include 'templates/elements/buttons.php'; ?>
+                                <?php $href = "#submit-registration"; $button = "Registration"; include $_SERVER['DOCUMENT_ROOT'].'/templates/elements/buttons.php'; ?>
                             </div>
                         </form>
                     </main>

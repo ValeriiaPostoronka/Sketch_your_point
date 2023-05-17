@@ -68,6 +68,7 @@
     
                     &__element {
                         margin: var(--sp-l) 0 var(--sp-l) 0;
+                        width: 100%;
     
                         label {
                             font-family: var(--family);
@@ -86,6 +87,7 @@
                             margin-top: var(--sp-xs);
                             padding: var(--sp-m) var(--sp-l);
                             width: -webkit-fill-available;
+                            width: -moz-available;
                         }
                     }
                 }

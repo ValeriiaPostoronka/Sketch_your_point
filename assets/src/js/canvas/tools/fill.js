@@ -5,7 +5,7 @@
 const fill = {
     
     click() {    
-        floodFill.fill(mouseX, mouseY, 100, ctx, 1);
+        floodFill.fill(mouseX, mouseY, 50, ctx, 1);
 
         cPush();
     },

@@ -1,3 +1,7 @@
+<?php
+  session_start();  
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +19,8 @@
 </head>
 <body>
     <div class="wrapper">
-        <?php include './templates/header.php' ?>
+    <?php if (isset($_SESSION["user"])) {?>
+        <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/header.php' ?>
 
         <main class="main">
             <aside class="sidebar">
@@ -55,6 +60,8 @@
                     <input type="range" class="sidebar__range" min="3" max="30" orient="vertical" value="10">
                 </nav>
                 <input type="color" class="sidebar__color">
+                <?php $href = "#save_button"; $button = "Save"; include './templates/elements/buttons.php' ?>
+                <?php $href = "#clean_button"; $button = "Clear canvas"; include './templates/elements/buttons.php' ?>
             </aside>
             <div class="canvas">
                 <canvas></canvas>
@@ -62,18 +69,24 @@
         </main>
 
         <?php include './templates/footer.php' ?>
+        <script src="./../assets/src/js/canvas/floodFill2D.js"></script>
+        <script src="./../assets/src/js/canvas/canvas.js"></script>
+        <script src="./../assets/src/js/canvas/tools/pen.js"></script>
+        <script src="./../assets/src/js/canvas/tools/eraser.js"></script>
+        <script src="./../assets/src/js/canvas/tools/square.js"></script>
+        <script src="./../assets/src/js/canvas/tools/circle.js"></script>
+        <script src="./../assets/src/js/canvas/save.js"></script>
+        <script src="./../assets/src/js/canvas/clean.js"></script>
+        <script src="./../assets/src/js/canvas/tools/edit.js"></script>
+        <script src="./../assets/src/js/canvas/tools/fill.js"></script>
+        <script src="./../assets/src/js/canvas/tools/segment.js"></script>
+        <script src="./../assets/src/js/canvas/colors.js"></script>
+        <script src="./../assets/src/js/canvas/radius.js"></script>
+        <script src="./../assets/src/js/canvas/tools.js"></script>
     </div>
-    <script src="./../assets/src/js/canvas/floodFill2D.js"></script>
-    <script src="./../assets/src/js/canvas/canvas.js"></script>
-    <script src="./../assets/src/js/canvas/tools/pen.js"></script>
-    <script src="./../assets/src/js/canvas/tools/eraser.js"></script>
-    <script src="./../assets/src/js/canvas/tools/square.js"></script>
-    <script src="./../assets/src/js/canvas/tools/circle.js"></script>
-    <script src="./../assets/src/js/canvas/tools/edit.js"></script>
-    <script src="./../assets/src/js/canvas/tools/fill.js"></script>
-    <script src="./../assets/src/js/canvas/tools/segment.js"></script>
-    <script src="./../assets/src/js/canvas/colors.js"></script>
-    <script src="./../assets/src/js/canvas/radius.js"></script>
-    <script src="./../assets/src/js/canvas/tools.js"></script>
+    <?php } else { 
+        header('Location: index.php');
+    } ?>
+    
 </body>
 </html>

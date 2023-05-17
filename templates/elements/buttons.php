@@ -3,7 +3,6 @@ button - name for button -->
 <script>
     <?php $link = "http://".$_SERVER['HTTP_HOST']."/assets/src/css/elements/button.css"; ?>
     if (document.querySelector("link[href='<?php echo $link; ?>']") === null) {
-        console.log("siag");
         let link = document.createElement("link");
         link.setAttribute("rel", "stylesheet");
         link.setAttribute ("type", "text/css");
