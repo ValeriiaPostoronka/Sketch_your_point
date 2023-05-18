@@ -10,6 +10,10 @@
     grid-template: 1fr / 1fr minmax(auto, 300px) minmax(auto, 1100px) 1fr;
     align-items: center;
     background-color: var(--c-04);
+
+    @media (max-width: 769px) {
+        grid-template: 1fr / 1fr minmax(auto, 50px) minmax(auto, 1100px) 1fr;
+    }
     
     &__logo {
         width: max-content;
@@ -28,11 +32,41 @@
         }
     }
     
-    &__task {
-        color: var(--c-white);
-        font-size: var(--fs-l);
-        grid-column: 3 / 4;
+    &__page {
+        display: flex;
         font-family: var(--family);
+
+        @media (max-width: 769px) {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        a {
+            color: var(--c-01);
+            text-align: center;
+            padding: var(--sp-m);
+            text-decoration: none;
+            font-size: var(--fs-l);
+            line-height: 25px;
+            border-radius: var(--br-s);
+            font-weight: 700;
+
+            @media (max-width: 992px) {
+                width: max-content;
+                padding: var(--sp-s);
+                font-size: var(--sp-m);
+            }
+
+            &:hover {
+                background-color: var(--c-02);
+                color: var(--c-05);
+            }
+
+            &.active {
+                background-color: var(--c-05);
+                color: var(--c-02);
+            }
+        }
     }
 
     .section__actions {
@@ -40,6 +74,8 @@
 
         .button {
             padding: var(--sp-xs) var(--sp-xl);
+            border: 2px solid var(--c-03);
+            color: var(--c-03);
         }
     }
 }

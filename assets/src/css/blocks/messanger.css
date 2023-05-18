@@ -1,0 +1,70 @@
+.section.section-messanger {
+  background-color: var(--c-05);
+  padding: var(--sp-l);
+}
+.section.section-messanger .messages__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xs);
+}
+.section.section-messanger .messages__list-item {
+  align-items: center;
+  background: var(--c-03);
+  border-radius: var(--br-m);
+  border: 2px solid var(--c-04);
+  padding: var(--sp-s) var(--sp-xl) var(--sp-s) var(--sp-s);
+  box-shadow: var(--shadow);
+}
+.section.section-messanger .messages__list-item .item__title {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--gap-xs) / 2);
+  margin-bottom: var(--sp-s);
+}
+.section.section-messanger .messages__list-item .item__title__name {
+  font-family: var(--family);
+  color: var(--c-05);
+  font-size: var(--fs-m);
+  font-weight: 500;
+}
+.section.section-messanger .messages__list-item .item__title__rating {
+  font-family: var(--family);
+  font-size: var(--fs-xs);
+  font-style: italic;
+  font-weight: 200;
+}
+.section.section-messanger .messages__list-item .item__description {
+  font-family: var(--family);
+  font-size: var(--fs-s);
+  font-weight: 200;
+  color: var(--c-05);
+}
+.section.section-messanger .messages__text {
+  display: flex;
+  margin-top: var(--sp-l);
+}
+.section.section-messanger .messages__text textarea {
+  font-family: var(--family);
+  font-size: var(--fs-m);
+  font-weight: 100;
+  font-style: italic;
+  padding: var(--sp-m) var(--sp-l);
+}
+.section.section-messanger .messages__text-field {
+  resize: none;
+  border: 2px solid var(--c-04);
+  border-radius: var(--br-m);
+  box-shadow: var(--shadow);
+  margin-right: var(--sp-s);
+}
+.section.section-messanger .messages__text .section__actions {
+  margin: auto;
+}
+.section.section-messanger .messages__text .section__actions .button {
+  padding: var(--sp-s) var(--sp-l);
+  background: var(--c-03);
+  color: var(--c-01);
+}
+.section.section-messanger .messages__text .section__actions .button:hover {
+  background: var(--c-02);
+}/*# sourceMappingURL=messanger.css.map */

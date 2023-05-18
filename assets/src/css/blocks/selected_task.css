@@ -1,0 +1,86 @@
+.wrapper {
+  min-height: 100vh;
+  display: grid;
+  grid-template: minmax(70px, auto) 75vh minmax(70px, auto)/1fr;
+  grid-template-areas: "header" "main" "footer";
+}
+.wrapper .main {
+  display: grid;
+  grid-area: main;
+  grid-template: 1fr/minmax(auto, 300px) minmax(auto, 300px) 1fr;
+  overflow: auto;
+}
+.wrapper .main .selected_task {
+  background-color: var(--c-01);
+  padding: var(--sp-l);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: sticky;
+  top: 0;
+  max-height: calc(75vh - var(--sp-l) * 2);
+}
+.wrapper .artist-task {
+  display: flex;
+}
+.wrapper .artist-task img {
+  height: 60px;
+  width: auto;
+  border-radius: 50%;
+  margin-right: var(--sp-s);
+}
+.wrapper .artist-task__title {
+  display: flex;
+  flex-direction: column;
+}
+.wrapper .artist-task__name {
+  font-family: var(--family);
+  color: var(--c-04);
+  font-size: var(--fs-m);
+  font-weight: 500;
+  margin-bottom: var(--sp-xs);
+}
+.wrapper .artist-task__rating {
+  font-family: var(--family);
+  font-size: var(--fs-xs);
+  color: var(--c-white);
+  font-style: italic;
+  font-weight: 200;
+}
+.wrapper .section__title {
+  font-size: var(--fs-xl);
+  color: var(--c-02);
+  margin-bottom: unset;
+}
+.wrapper .information {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-m);
+}
+.wrapper .information__element {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xs);
+}
+.wrapper .information__element label {
+  font-family: var(--family);
+  font-size: var(--fs-l);
+  color: var(--c-04);
+}
+.wrapper .information__element-about {
+  font-family: var(--family);
+  font-size: var(--fs-m);
+  color: var(--c-white);
+  font-weight: 600;
+}
+.wrapper .information .section__actions {
+  margin-bottom: unset;
+}
+.wrapper .information .section__actions .button {
+  padding: var(--sp-s) var(--sp-l);
+  background: var(--c-03);
+  color: var(--c-01);
+}
+.wrapper .information .section__actions .button:hover {
+  background: var(--c-02);
+}/*# sourceMappingURL=selected_task.css.map */

@@ -1,9 +1,3 @@
-<?php
-  session_start();  
-
-  if (isset($_SESSION["user"])) {
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,14 +7,12 @@
     <title>Canvas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="./../../assets/src/css/base/base.css">
-    <link rel="stylesheet" type="text/css" href="./../../assets/src/css/base/modal.css">
     <link rel="stylesheet" type="text/css" href="./../../assets/src/css/base/header.css">
     <link rel="stylesheet" type="text/css" href="./../../assets/src/css/base/footer.css">
     <link rel="stylesheet" type="text/css" href="./../../assets/src/css/elements/image.css">
-    <link rel="stylesheet" type="text/css" href="./../../assets/src/css/blocks/hero_artist.css">
     <link rel="stylesheet" type="text/css" href="./../../assets/src/css/blocks/grid_drawing.css">
-    <link rel="stylesheet" type="text/css" href="./../../assets/src/css/blocks/tasks.css">
-    <link rel="stylesheet" type="text/css" href="./../../assets/src/css/blocks/modal_task.css">
+    <link rel="stylesheet" type="text/css" href="./../../assets/src/css/blocks/selected_task.css">
+    <link rel="stylesheet" type="text/css" href="./../../assets/src/css/blocks/messanger.css">
     <script src="https://kit.fontawesome.com/5f551754c5.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -28,23 +20,13 @@
         <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/header.php'; ?>
 
         <main class="main">
-        <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/blocks/tasks.php'; ?>
-            <div class="page">
-                <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/blocks/hero_artist.php'; ?>
-                <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/blocks/grid_drawing.php'; ?>
-                <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/blocks/modal_task.php'; ?>
-            </div>
+            <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/blocks/selected_task.php'; ?>
+            <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/blocks/messanger.php'; ?>
+            <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/blocks/grid_drawing.php'; ?>
         </main>
 
         <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/footer.php' ?>
     </div>
 
-    <script src="../../assets/src/js/blocks/tasks.js"></script>
-    <script src="../../assets/src/js/fslightbox.js"></script>
 </body>
 </html>
-<?php 
-  } else {
-    header("Location: http://".$_SERVER['HTTP_HOST']);
-  }
-?>

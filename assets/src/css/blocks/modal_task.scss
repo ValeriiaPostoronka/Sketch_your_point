@@ -1,0 +1,84 @@
+#modal-task {
+
+    .artist-task {
+        display: flex;
+        margin: var(--sp-l) 0 var(--sp-l) 0;
+    
+        img {
+            height: 60px;
+            width: auto;
+            border-radius: 50%;
+            margin-right: var(--sp-s);
+        }
+    
+        &__title {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        &__name {
+            font-family: var(--family);
+            color: var(--c-05);
+            font-size: var(--fs-m);
+            font-weight: 500;
+            margin-bottom: var(--sp-xs);
+        }
+    
+        &__text {
+            font-family: var(--family);
+            font-size: var(--fs-xs);
+            font-style: italic;
+            font-weight: 200;
+        }
+    }
+    
+    .form {
+        
+        .first-line {
+            display: flex;
+            gap: var(--gap-xs);
+        }
+
+        &__element {
+            margin: var(--sp-l) 0 var(--sp-l) 0;
+            width: 100%;
+        
+            label {
+                font-family: var(--family);
+                font-size: var(--fs-l);
+                color: var(--c-05);
+            }
+    
+            textarea {
+                resize: none;
+                border: 2px solid var(--c-04);
+                border-radius: var(--br-m);
+                box-shadow: var(--shadow);
+                font-family: var(--family);
+                font-size: var(--fs-m);
+                font-weight: 100;
+                font-style: italic;
+                margin-top: var(--sp-xs);
+                padding: var(--sp-m) var(--sp-l);
+                width: -webkit-fill-available;
+                width: -moz-available;
+            }
+
+            input, select {
+                resize: none;
+                border: 2px solid var(--c-04);
+                border-radius: var(--br-m);
+                box-shadow: var(--shadow);
+                color: var(--c-05);
+                font-family: var(--family);
+                font-size: var(--fs-l);
+                margin-top: var(--sp-xs);
+                padding: var(--sp-m) var(--sp-l);
+            }
+        }
+    }
+
+    .section__actions {
+        margin-bottom: unset;
+    }
+}

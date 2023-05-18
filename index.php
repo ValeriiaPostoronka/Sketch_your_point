@@ -10,6 +10,7 @@
     <title>Canvas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="/assets/src/css/base/base.css">
+    <link rel="stylesheet" type="text/css" href="/assets/src/css/base/modal.css">
     <link rel="stylesheet" type="text/css" href="/assets/src/css/blocks/cards.css">
 </head>
 <body>

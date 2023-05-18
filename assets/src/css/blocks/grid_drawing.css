@@ -43,10 +43,15 @@
   color: var(--c-black);
 }
 .section.section-grid_drawing .container .section__list a.item:hover img {
-  filter: drop-shadow(rgba(0, 0, 0, 0.08) 0px 4px 8px);
+  box-shadow: var(--shadow);
   transform: translateY(-1px);
   transition-delay: 0s;
   transition-duration: 0.3s;
   transition-property: transform;
   transition-timing-function: ease;
+}
+
+.fslightbox-flex-centered div {
+  background-color: white;
+  border: solid;
 }/*# sourceMappingURL=grid_drawing.css.map */

@@ -1,0 +1,85 @@
+.section.section-messanger {
+    background-color: var(--c-05);
+    padding: var(--sp-l);
+
+    .messages__list {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-xs);
+
+        &-item {
+            align-items: center;
+            background: var(--c-03);
+            border-radius: var(--br-m);
+            border: 2px solid var(--c-04);
+            padding: var(--sp-s) var(--sp-xl) var(--sp-s) var(--sp-s);
+            box-shadow: var(--shadow);
+
+            .item {
+
+                &__title {
+                    display: flex;
+                    flex-direction: column;
+                    gap: calc(var(--gap-xs) / 2);
+                    margin-bottom: var(--sp-s);
+                    
+                    &__name {
+                        font-family: var(--family);
+                        color: var(--c-05);
+                        font-size: var(--fs-m);
+                        font-weight: 500;
+                    }
+    
+                    &__rating {
+                        font-family: var(--family);
+                        font-size: var(--fs-xs);
+                        font-style: italic;
+                        font-weight: 200;
+                    }
+                }
+
+                &__description {
+                    font-family: var(--family);
+                    font-size: var(--fs-s);
+                    font-weight: 200;
+                    color: var(--c-05);
+                }
+            }
+        }
+    }
+
+    .messages__text {
+        display: flex;
+        margin-top: var(--sp-l);
+
+        textarea {
+            font-family: var(--family);
+            font-size: var(--fs-m);
+            font-weight: 100;
+            font-style: italic;
+            padding: var(--sp-m) var(--sp-l);
+        }
+
+        &-field {
+            resize: none;
+            border: 2px solid var(--c-04);
+            border-radius: var(--br-m);
+            box-shadow: var(--shadow);
+            margin-right: var(--sp-s);
+        }
+
+        .section__actions {
+            margin: auto;
+
+            .button {
+                padding: var(--sp-s) var(--sp-l);
+                background: var(--c-03);
+                color: var(--c-01);
+
+                &:hover {
+                    background: var(--c-02);
+                }
+            }
+        }
+    }
+}

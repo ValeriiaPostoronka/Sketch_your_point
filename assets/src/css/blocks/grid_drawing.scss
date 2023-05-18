@@ -47,9 +47,9 @@
     
             a.item {
                 &:hover {
-    
+                    
                     img {
-                        filter: drop-shadow(rgba(0, 0, 0, 0.08) 0px 4px 8px);
+                        box-shadow: var(--shadow);
                         transform: translateY(-1px);
                         transition-delay: 0s;
                         transition-duration: .3s;
@@ -59,5 +59,13 @@
                 }
             }
         }
+    }
+}
+
+.fslightbox-flex-centered {
+
+    div {
+        background-color: white;
+        border: solid;
     }
 }

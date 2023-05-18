@@ -1,0 +1,104 @@
+.wrapper {
+    min-height: 100vh; 
+    display: grid;
+    grid-template: minmax(70px, auto) 75vh minmax(70px, auto) / 1fr; 
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+
+    .main {
+        display: grid;
+        grid-area: main;
+        grid-template: 1fr / minmax(auto, 300px) minmax(auto, 300px) 1fr;
+        overflow: auto;
+        
+        .selected_task {
+            background-color: var(--c-01);
+            padding: var(--sp-l);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            position: sticky;
+            top: 0;
+            max-height: calc(75vh - var(--sp-l) * 2);
+        }
+    }
+
+    .artist-task {
+        display: flex;
+    
+        img {
+            height: 60px;
+            width: auto;
+            border-radius: 50%;
+            margin-right: var(--sp-s);
+        }
+    
+        &__title {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        &__name {
+            font-family: var(--family);
+            color: var(--c-04);
+            font-size: var(--fs-m);
+            font-weight: 500;
+            margin-bottom: var(--sp-xs);
+        }
+    
+        &__rating {
+            font-family: var(--family);
+            font-size: var(--fs-xs);
+            color: var(--c-white);
+            font-style: italic;
+            font-weight: 200;
+        }
+    }
+
+    .section__title {
+        font-size: var(--fs-xl);
+        color: var(--c-02);
+        margin-bottom: unset;
+    }
+
+    .information {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-m);
+
+        &__element {
+            display: flex;
+            flex-direction: column;
+            gap: var(--gap-xs);
+
+            label {
+                font-family: var(--family);
+                font-size: var(--fs-l);
+                color: var(--c-04);
+            }
+
+            &-about {
+                font-family: var(--family);
+                font-size: var(--fs-m);
+                color: var(--c-white);
+                font-weight: 600;
+            }
+        }
+
+        .section__actions {
+            margin-bottom: unset;
+            
+            .button {
+                padding: var(--sp-s) var(--sp-l);
+                background: var(--c-03);
+                color: var(--c-01);
+
+                &:hover {
+                    background: var(--c-02);
+                }
+            }
+        }
+    }
+}

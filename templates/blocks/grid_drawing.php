@@ -19,7 +19,9 @@
                         <div class="item__image">
                             <img src="http://<?php echo $_SERVER['HTTP_HOST'].'/results/'.$image; ?>" alt="">
                         </div>
-                        <h3 class="item__name"><?php $subtitle = "Search engines analyze text"; include '../elements/subtitle.php'; ?></h3>
+                        <h3 class="item__name">
+                            <?php $subtitle = "Search engines analyze text"; include '../elements/subtitle.php'; ?>
+                        </h3>
                     </a>
                 <?php } ?>
             </div>
