@@ -1,4 +1,11 @@
 <?php 
+    function getLoadFile($fileName) {
+        if (file_exists($_SERVER['DOCUMENT_ROOT']."/results/".$fileName)) { 
+            $filePath = "http://".$_SERVER['HTTP_HOST']."/results/".$fileName;
+            echo "<script>window.onload = () => {loadImage(\"".$filePath."\");}</script>";
+        }
+    }
+
     if (isset($_GET['taskID']) && basename($_SERVER['PHP_SELF']) == "canvas.php") {
         $ID = $_GET['taskID'];
     }
@@ -15,7 +22,9 @@
         </div>
     <?php } else { ?>
         <div class="header__task">
-            <?php if (isset($_GET['taskID'])) {
+            <?php 
+            $fileName = $_SESSION['user'];
+            if (isset($_GET['taskID'])) {
                 $dbURL = $_SERVER['DOCUMENT_ROOT'].'/templates/blocks/script/database.php';
                 require_once $dbURL;
         
@@ -26,12 +35,20 @@
                 if ($rowNum > 0) {
                     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     echo $row['ID'].'. '.$row['title'];
+                    $fileName = $fileName."_".$row['ID'].".png";
+                    getLoadFile($fileName);
                 }
-                else { ?>
+                else { 
+                    $fileName = $fileName.".png";
+                    getLoadFile($fileName); 
+                ?>
                     Вдалого тренування!    
                 <?php }
             } 
-            else { ?>
+            else { 
+                $fileName = $fileName.".png";
+                    getLoadFile($fileName);
+                ?>
                 Вдалого тренування!
             <?php } ?>
         </div>

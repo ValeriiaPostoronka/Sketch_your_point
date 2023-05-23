@@ -8,9 +8,14 @@
     $img = base64_decode($data);
 
     $user = $_SESSION['user'];
-    $taskID = $_POST['taskID']; // get from post
+    if (isset($_POST['taskID'])) {
+        $taskID = $_POST['taskID'];
+        $path = $_SERVER['DOCUMENT_ROOT'].'/results/'.$user.'_'.$taskID.'.png';
+    }
+    else {
+        $path = $_SERVER['DOCUMENT_ROOT'].'/results/'.$user.'.png';
+    }
 
-    $path = $_SERVER['DOCUMENT_ROOT'].'/results/'.$user.'_'.$taskID.'.png';
     if (file_put_contents($path, $img)) {
         print $path;
     }

@@ -1,5 +1,5 @@
 <?php
-  session_start();  
+  session_start();
 ?>
 
 <!DOCTYPE html>
@@ -71,6 +71,7 @@
         <?php include './templates/footer.php' ?>
         <script src="./../assets/src/js/canvas/floodFill2D.js"></script>
         <script src="./../assets/src/js/canvas/canvas.js"></script>
+        <script src="./../assets/src/js/canvas/loadImage.js"></script>
         <script src="./../assets/src/js/canvas/tools/pen.js"></script>
         <script src="./../assets/src/js/canvas/tools/eraser.js"></script>
         <script src="./../assets/src/js/canvas/tools/square.js"></script>

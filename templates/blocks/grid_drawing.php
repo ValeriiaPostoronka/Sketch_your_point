@@ -1,18 +1,6 @@
 <?php 
-    function debug_to_console($data) {
-        $output = $data;
-        if (is_array($output))
-            $output = implode(',', $output);
-
-        echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
-    }
-
-    debug_to_console($user);
-    debug_to_console($_SESSION['user'] === $user);
-    debug_to_console(isset($user));
-
     $imgFiles = array_filter(scandir($_SERVER["DOCUMENT_ROOT"].'/results/'), function($item) use ($user) {
-        if (strpos($item, $user) === 0) {
+        if (strpos($item, $user.'_') === 0) {
             return $item;   
         }
     });

@@ -11,7 +11,12 @@ let saveImage = () => {
 
         request.open('POST', 'http://localhost:8888/templates/blocks/script/save.php', true);
         request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        request.send('img='+data+'&taskID='+taskTitle[0].innerText.split('.')[0]);
+        if (taskTitle[0].innerText !== 'Вдалого тренування!') {
+            request.send('img='+data+'&taskID='+taskTitle[0].innerText.split('.')[0]);
+        }
+        else {
+            request.send('img='+data);
+        }
     }
 };
 

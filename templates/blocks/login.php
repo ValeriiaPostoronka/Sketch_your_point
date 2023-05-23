@@ -16,14 +16,6 @@
 
 <section class="section section-login">
     <?php
-        function debug_to_console($data) {
-            $output = $data;
-            if (is_array($output))
-                $output = implode(',', $output);
-        
-            echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
-        }
-
         if (isset($_POST["username"]) && !isset($_POST["email"])) {
             $username = $_POST["username"];
             $password = $_POST["password"];
@@ -52,12 +44,8 @@
                     $email = mysqli_fetch_array($resultEmail, MYSQLI_ASSOC);
                     $user = mysqli_fetch_array($resultUser, MYSQLI_ASSOC);
 
-                    debug_to_console($email);
-                    debug_to_console($user);
-
                     if ($user || $email) {
                         if ($password == $user["password"] || $password == $email["password"]) {
-                            echo "kjdfnskj";
                             $_SESSION["admin"] = $username;
                         }
                     }
