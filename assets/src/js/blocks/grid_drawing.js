@@ -7,7 +7,7 @@ let sendConfirmation = (element) => {
 
     request.open('POST', 'http://localhost:8888/templates/blocks/script/teacherConfirm.php', true);
     request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    request.send('taskID=' + splitID[1] + '&user=' + splitID[0]);
+    request.send('taskID=' + splitID[1] + '&user=' + splitID[0] + '&mark=' + splitID[2]);
 }
 
 let adminRulesAccept = () => {

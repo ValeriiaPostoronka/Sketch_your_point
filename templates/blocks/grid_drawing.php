@@ -1,9 +1,17 @@
 <?php 
-    $imgFiles = array_filter(scandir($_SERVER["DOCUMENT_ROOT"].'/results/'), function($item) use ($user) {
-        if (strpos($item, $user.'_') === 0) {
-            return $item;   
-        }
-    });
+    if (isset($taskRow)) {
+        $imgFiles = array_filter(scandir($_SERVER["DOCUMENT_ROOT"].'/results/'), function($item) use ($taskRow) {
+            if (strpos($item, '_'.$taskRow['ID']) !== false) {
+                return $item;   
+            }
+        });
+    } else {
+        $imgFiles = array_filter(scandir($_SERVER["DOCUMENT_ROOT"].'/results/'), function($item) use ($user) {
+            if (strpos($item, $user.'_') === 0) {
+                return $item;   
+            }
+        });
+    }    
 
     if (isset($_SESSION['admin'])) {?>
         <script>window.onload = () => {adminRulesAccept();}</script>
@@ -18,7 +26,8 @@
                 <?php if (!empty($imgFiles)) { ?>
                 <?php foreach ($imgFiles as $image) { ?>
                     <?php
-                        $task = explode('.', explode('_', $image)[1])[0];
+                        $task = isset($taskRow) ? $taskRow['ID'] : explode('.', explode('_', $image)[1])[0];
+                        $user = explode('_', $image)[0];
                         $sql = "SELECT * FROM Tasks WHERE ID = ".$task;
                         $result = mysqli_query($conn, $sql);
                         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -32,11 +41,24 @@
                                 <img src="http://<?php echo $_SERVER['HTTP_HOST'].'/results/'.$image; ?>" alt="">
                             </div>
                             <h3 class="item__name">
-                                <?php $subtitle = $row['title']; include $_SERVER["DOCUMENT_ROOT"].'/templates/elements/subtitle.php'; ?>
+                                <?php $subtitle = isset($taskRow) ? $user : $row['title']; include $_SERVER["DOCUMENT_ROOT"].'/templates/elements/subtitle.php'; ?>
                             </h3>
                         </a>
                         <div class="item__mark">
-                            Ствердження викладача: <i class="fa-regular fa-circle<?php echo $rowCount > 0 ? "-check" : "" ;?>" id="<?php echo $user."_".$row['ID']; ?>"></i>
+                            Ствердження викладача: 
+                            <i class="fa-regular fa-circle<?php
+                                $mark = $row['mark'];
+
+                                if ($row['difficulty'] === "Високий") {
+                                    $mark *= 3; 
+                                }
+                                else if ($row['difficulty'] === "Середній") {
+                                    $mark *= 2; 
+                                }
+                                echo $rowCount > 0 ? "-check" : "" ;?>" 
+                                id="<?php
+                                echo $user."_".$row['ID']."_".$mark; ?>">
+                            </i>
                         </div>
                     </div>
                 <?php } } else { ?>

@@ -3,6 +3,7 @@
     $targetUser = $_POST['user'];
     $taskID = $_POST['taskID']; // get from post
     $user = $_SESSION['user'];
+    $mark = $_POST['mark'];
 
     require_once $_SERVER['DOCUMENT_ROOT'].'/templates/blocks/script/database.php';
 
@@ -11,12 +12,12 @@
     $rowCount = mysqli_num_rows($result);
 
     if ($rowCount == 0) {
-        $sql = "INSERT INTO Marks (user, taskID, targetUser) VALUES (?,?,?)";
+        $sql = "INSERT INTO Marks (user, taskID, targetUser, mark) VALUES (?,?,?,?)";
         $stmt = mysqli_stmt_init($conn);
         $prepareStmt = mysqli_stmt_prepare($stmt, $sql);
     
         if ($prepareStmt) {
-            mysqli_stmt_bind_param($stmt, "sis", $user, $taskID, $targetUser);
+            mysqli_stmt_bind_param($stmt, "sisi", $user, $taskID, $targetUser, $mark);
             mysqli_stmt_execute($stmt);
         }
     }

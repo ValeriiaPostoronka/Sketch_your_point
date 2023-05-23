@@ -1,3 +1,9 @@
+<?php
+  session_start();  
+
+  if (isset($_SESSION["user"])) {
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,13 +26,41 @@
         <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/header.php'; ?>
 
         <main class="main">
-            <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/blocks/selected_task.php'; ?>
-            <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/blocks/messanger.php'; ?>
-            <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/blocks/grid_drawing.php'; ?>
+            <?php if (isset($_GET['taskID'])) {
+                $dbURL = $_SERVER['DOCUMENT_ROOT'].'/templates/blocks/script/database.php';
+                require_once $dbURL;
+
+                $taskID = $_GET['taskID'];
+                $sql = "SELECT * FROM `Tasks` WHERE ID = $taskID";
+                $result = mysqli_query($conn, $sql);
+                $taskRow = mysqli_fetch_array($result, MYSQLI_ASSOC);
+            ?>
+                <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/blocks/selected_task.php'; ?>
+                <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/blocks/messanger.php'; ?>
+                <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/blocks/grid_drawing.php'; ?>
+            <?php } else { ?>
+                На жаль, такого завдання немає        
+            <?php 
+            $href = "http://".$_SERVER['HTTP_HOST']."/templates/pages/artist.php"; $button = "Сторінка користувача"; 
+            include $_SERVER['DOCUMENT_ROOT'].'/templates/elements/buttons.php';
+            } ?>
         </main>
 
         <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/footer.php' ?>
     </div>
 
+    <script src="../../assets/src/js/blocks/messanger.js"></script>
+    <script src="../../assets/src/js/blocks/grid_drawing.js"></script>
+    <script>
+        if ( window.history.replaceState ) {
+            window.history.replaceState( null, null, window.location.href );
+        }
+    </script>
 </body>
 </html>
+
+<?php 
+  } else {
+    header("Location: http://".$_SERVER['HTTP_HOST']);
+  }
+?>

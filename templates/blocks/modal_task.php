@@ -31,9 +31,9 @@
                                 <label>Рівень складності</label>
                                 <br>
                                 <select class="tasks__sorting-list" name="difficulty">
-                                    <option value="low" selected>Початковий</option>
-                                    <option value="middle">Середній</option>
-                                    <option value="high">Високий</option>
+                                    <option value="Початковий" selected>Початковий</option>
+                                    <option value="Середній">Середній</option>
+                                    <option value="Високий">Високий</option>
                                 </select>
                             </div>
                         </div>

@@ -44,6 +44,11 @@
     <script src="../../assets/src/js/blocks/grid_drawing.js"></script>
     <script src="../../assets/src/js/fslightbox.js"></script>
     <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+    <script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+    </script>
 </body>
 </html>
 <?php 

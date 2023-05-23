@@ -81,7 +81,7 @@
                     <i class="fa-solid fa-star fa-xs" title="Ваше завдання"></i>
                 <?php } ?>
             </div>
-            <a class="item__description" href="<?php echo "http://".$_SERVER['HTTP_HOST'].'/canvas.php?taskID='.$row['ID']?>">
+            <a class="item__description" href="<?php echo "http://".$_SERVER['HTTP_HOST'].'/templates/pages/separate_task.php?taskID='.$row['ID']?>";>
                 <?php echo $row['title']; ?>
             </a>
         </div>
