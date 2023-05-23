@@ -14,6 +14,14 @@
     @media (max-width: 769px) {
         grid-template: 1fr / 1fr minmax(auto, 50px) minmax(auto, 1100px) 1fr;
     }
+
+
+    &__task {
+        color: var(--c-white);
+        font-size: var(--fs-l);
+        grid-column: 3 / 4;
+        font-family: var(--family);
+    }
     
     &__logo {
         width: max-content;

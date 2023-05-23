@@ -11,6 +11,8 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: var(--gap-m);
+            margin-bottom: var(--sp-xxl);
+            align-items: baseline;
     
             @media (max-width: 768px) {
                 grid-template-columns: repeat(3, 1fr);
@@ -27,16 +29,26 @@
             .item {
                 
                 &__image {
-                    margin-bottom: var(--sp-s);
                     border-radius: var(--br-m);
     
                     @media (max-width: 576px) {
-                        margin-bottom: var(--sp-xs);
                         border-radius: var(--br-s);
                     }
                 }
+
+                &__mark {
+                    color: black;
+                    font-family: var(--family);
+                    text-align: center;
+                    font-size: var(--fs-xs);
+                }
     
                 &__name {
+
+                    .section__subtitle {
+                        margin: unset;
+                    }
+
                     font-weight: 500;
                     font-size: var(--fs-m);
                     line-height: 24px;
@@ -45,27 +57,32 @@
                 }
             }
     
-            a.item {
+            .item {
                 &:hover {
-                    
-                    img {
-                        box-shadow: var(--shadow);
-                        transform: translateY(-1px);
-                        transition-delay: 0s;
-                        transition-duration: .3s;
-                        transition-property: transform;
-                        transition-timing-function: ease;
-                    }
+                    overflow: hidden;
+                    box-shadow: var(--shadow);
+                    transform: translateY(-1px);
+                    transition-delay: 0s;
+                    transition-duration: .3s;
+                    transition-property: transform;
+                    transition-timing-function: ease;
+                    border-radius: var(--br-m);
                 }
             }
         }
     }
 }
 
-.fslightbox-flex-centered {
+.fslightbox-absoluted {
+    
+    .fslightbox-flex-centered {
 
-    div {
-        background-color: white;
-        border: solid;
+        div {
+
+            img {
+                background-color: white;
+                border: solid;
+            }
+        }
     }
 }

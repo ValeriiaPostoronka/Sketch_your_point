@@ -2,6 +2,9 @@
   margin-top: var(--sp-section);
   margin-bottom: var(--sp-section);
 }
+.section.section-hero_artist input[type=file] {
+  display: none;
+}
 .section.section-hero_artist .container {
   max-width: var(--container);
   padding: 0 var(--sp-xl) 0 var(--sp-xl);

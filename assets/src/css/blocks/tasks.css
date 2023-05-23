@@ -65,6 +65,17 @@
   flex-direction: column;
   overflow-y: auto;
 }
+.wrapper .main .tasks__list-nothing {
+  background: var(--c-03);
+  border-radius: var(--br-m);
+  border: 2px solid var(--c-04);
+  padding: var(--sp-s) var(--sp-xl) var(--sp-s) var(--sp-s);
+  box-shadow: var(--shadow);
+  font-family: var(--family);
+  font-size: var(--fs-s);
+  font-weight: 200;
+  font-style: italic;
+}
 .wrapper .main .tasks__list-item {
   display: flex;
   gap: var(--gap-xs);
@@ -94,14 +105,33 @@
 .wrapper .main .tasks__list-item .item__evaluation .fa-caret-up:hover {
   color: var(--c-green);
 }
+.wrapper .main .tasks__list-item .item__evaluation .fa-caret-up.active {
+  color: var(--c-green);
+}
 .wrapper .main .tasks__list-item .item__evaluation .fa-caret-down:hover {
   color: var(--c-red);
+}
+.wrapper .main .tasks__list-item .item__evaluation .fa-caret-down.active {
+  color: var(--c-red);
+}
+.wrapper .main .tasks__list-item .item__evaluation .fa-star {
+  line-height: inherit;
+  color: var(--c-05);
+}
+.wrapper .main .tasks__list-item .item__evaluation .fa-star:hover {
+  color: var(--c-01);
 }
 .wrapper .main .tasks__list-item .item__description {
   font-family: var(--family);
   font-size: var(--fs-s);
   font-weight: 200;
   font-style: italic;
+  text-decoration: none;
+  color: black;
+}
+.wrapper .main .tasks__list-item .item__description:hover {
+  font-weight: 500;
+  color: var(--c-05);
 }
 .wrapper .main .tasks__text {
   display: flex;

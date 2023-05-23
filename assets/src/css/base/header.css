@@ -16,6 +16,12 @@
     grid-template: 1fr/1fr minmax(auto, 50px) minmax(auto, 1100px) 1fr;
   }
 }
+.header__task {
+  color: var(--c-white);
+  font-size: var(--fs-l);
+  grid-column: 3/4;
+  font-family: var(--family);
+}
 .header__logo {
   width: -moz-max-content;
   width: max-content;

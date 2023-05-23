@@ -40,7 +40,10 @@
     </div>
 
     <script src="../../assets/src/js/blocks/tasks.js"></script>
+    <script src="../../assets/src/js/blocks/hero_artist.js"></script>
+    <script src="../../assets/src/js/blocks/grid_drawing.js"></script>
     <script src="../../assets/src/js/fslightbox.js"></script>
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
 </body>
 </html>
 <?php 

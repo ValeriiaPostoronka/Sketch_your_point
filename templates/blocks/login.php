@@ -16,6 +16,14 @@
 
 <section class="section section-login">
     <?php
+        function debug_to_console($data) {
+            $output = $data;
+            if (is_array($output))
+                $output = implode(',', $output);
+        
+            echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
+        }
+
         if (isset($_POST["username"]) && !isset($_POST["email"])) {
             $username = $_POST["username"];
             $password = $_POST["password"];
@@ -32,6 +40,28 @@
             if ($user || $email) {
                 if (password_verify($password, $user["password"]) || password_verify($password, $email["password"])) {
                     $_SESSION["user"] = $username;
+
+                    $email = null;
+                    $user = null;
+
+                    $sql = "SELECT * FROM Admin WHERE name = '$username'";
+                    $resultUser = mysqli_query($conn, $sql);
+                    $sql = "SELECT * FROM Admin WHERE email = '$username'";
+                    $resultEmail = mysqli_query($conn, $sql);
+
+                    $email = mysqli_fetch_array($resultEmail, MYSQLI_ASSOC);
+                    $user = mysqli_fetch_array($resultUser, MYSQLI_ASSOC);
+
+                    debug_to_console($email);
+                    debug_to_console($user);
+
+                    if ($user || $email) {
+                        if ($password == $user["password"] || $password == $email["password"]) {
+                            echo "kjdfnskj";
+                            $_SESSION["admin"] = $username;
+                        }
+                    }
+
                     header("Location: index.php");
                     die();
                 }
