@@ -95,8 +95,8 @@ submitTaskButton.onclick = () => {
     let inputFields = document.forms["submit-form"].getElementsByTagName("textarea");
     let submit = true;
 
-    if (inputFields[0].value.length < 50) {
-        alert("Назва завдання повинна бути не менше 50 символів");
+    if (inputFields[0].value.length < 20) {
+        alert("Назва завдання повинна бути не менше 20 символів");
         submit = false;
     }
 

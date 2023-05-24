@@ -24,27 +24,46 @@
 <body>
     <div class="wrapper">
         <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/header.php'; ?>
+        <?php if (isset($_GET['taskID'])) { ?>
+                <?php
+                    $dbURL = $_SERVER['DOCUMENT_ROOT'].'/templates/blocks/script/database.php';
+                    require_once $dbURL;
 
-        <main class="main">
-            <?php if (isset($_GET['taskID'])) {
-                $dbURL = $_SERVER['DOCUMENT_ROOT'].'/templates/blocks/script/database.php';
-                require_once $dbURL;
-
-                $taskID = $_GET['taskID'];
-                $sql = "SELECT * FROM `Tasks` WHERE ID = $taskID";
-                $result = mysqli_query($conn, $sql);
-                $taskRow = mysqli_fetch_array($result, MYSQLI_ASSOC);
-            ?>
-                <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/blocks/selected_task.php'; ?>
-                <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/blocks/messanger.php'; ?>
-                <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/blocks/grid_drawing.php'; ?>
-            <?php } else { ?>
-                На жаль, такого завдання немає        
-            <?php 
-            $href = "http://".$_SERVER['HTTP_HOST']."/templates/pages/artist.php"; $button = "Сторінка користувача"; 
-            include $_SERVER['DOCUMENT_ROOT'].'/templates/elements/buttons.php';
+                    $taskID = $_GET['taskID'];
+                    $sql = "SELECT * FROM `Tasks` WHERE ID = $taskID";
+                    $result = mysqli_query($conn, $sql);
+                    $rowNum = mysqli_num_rows($result);
+                    if ($rowNum > 0) { ?>
+                        <main class="main">
+                        <?php
+                        $taskRow = mysqli_fetch_array($result, MYSQLI_ASSOC);
+                        include $_SERVER['DOCUMENT_ROOT'].'/templates/blocks/selected_task.php';
+                        include $_SERVER['DOCUMENT_ROOT'].'/templates/blocks/messanger.php';
+                        include $_SERVER['DOCUMENT_ROOT'].'/templates/blocks/grid_drawing.php';
+                        ?>
+                        </main>
+                        <?php
+                    } 
+                    else { ?>
+                        <div class="nothing">
+                            <?php
+                                $title = "На жаль, такого завдання немає"; include $_SERVER["DOCUMENT_ROOT"].'/templates/elements/title.php';
+                                $href = "http://".$_SERVER['HTTP_HOST']."/templates/pages/artist.php"; $button = "Сторінка користувача"; 
+                                include $_SERVER['DOCUMENT_ROOT'].'/templates/elements/buttons.php';
+                            ?>
+                        </div>
+                    <?php }
+                } else { ?>
+                    <div class="nothing">
+                        <?php
+                            $title = "На жаль, такого завдання немає"; include $_SERVER["DOCUMENT_ROOT"].'/templates/elements/title.php';
+                            $href = "http://".$_SERVER['HTTP_HOST']."/templates/pages/artist.php"; $button = "Сторінка користувача"; 
+                            include $_SERVER['DOCUMENT_ROOT'].'/templates/elements/buttons.php';
+                        ?>
+                    </div>
+                <?php 
             } ?>
-        </main>
+        
 
         <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/footer.php' ?>
     </div>

@@ -1,10 +1,16 @@
 .section.section-messanger {
     background-color: var(--c-05);
     padding: var(--sp-l);
+    position: sticky;
+    max-height: calc(75vh - var(--sp-l) * 2);
+    top: 0;
+    display: flex;
+    flex-direction: column;
 
     .messages__list {
         display: flex;
         flex-direction: column;
+        overflow-y: auto;
         gap: var(--gap-xs);
 
         &-item {

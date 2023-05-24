@@ -46,18 +46,7 @@
                         </a>
                         <div class="item__mark">
                             Ствердження викладача: 
-                            <i class="fa-regular fa-circle<?php
-                                $mark = $row['mark'];
-
-                                if ($row['difficulty'] === "Високий") {
-                                    $mark *= 3; 
-                                }
-                                else if ($row['difficulty'] === "Середній") {
-                                    $mark *= 2; 
-                                }
-                                echo $rowCount > 0 ? "-check" : "" ;?>" 
-                                id="<?php
-                                echo $user."_".$row['ID']."_".$mark; ?>">
+                            <i class="fa-regular fa-circle<?php echo $rowCount > 0 ? "-check" : "" ;?>"  id="<?php echo $user."_".$row['ID']."_".$row['mark']; ?>">
                             </i>
                         </div>
                     </div>

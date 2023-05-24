@@ -4,6 +4,9 @@
   grid-template: minmax(70px, auto) 75vh minmax(70px, auto)/1fr;
   grid-template-areas: "header" "main" "footer";
 }
+.wrapper .nothing .section__title {
+  margin-top: var(--sp);
+}
 .wrapper .main {
   display: grid;
   grid-area: main;
@@ -19,6 +22,11 @@
   position: sticky;
   top: 0;
   max-height: calc(75vh - var(--sp-l) * 2);
+}
+.wrapper .main .selected_task .section__title {
+  font-size: var(--fs-xl);
+  color: var(--c-02);
+  margin-bottom: unset;
 }
 .wrapper .artist-task {
   display: flex;
@@ -46,11 +54,6 @@
   color: var(--c-white);
   font-style: italic;
   font-weight: 200;
-}
-.wrapper .section__title {
-  font-size: var(--fs-xl);
-  color: var(--c-02);
-  margin-bottom: unset;
 }
 .wrapper .information {
   display: flex;

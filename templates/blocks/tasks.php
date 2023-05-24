@@ -1,10 +1,18 @@
 <?php
+    function debug_to_console($data) {
+        $output = $data;
+        if (is_array($output))
+            $output = implode(',', $output);
+
+        echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
+    }
     $user = $_SESSION["user"];
     if (isset($_POST["task"])) {
         $task = $_POST["task"];
         $mark = $_POST["mark"];
         $dif = $_POST["difficulty"];
         $des = $_POST["description"];
+        debug_to_console($des);
         
         $dbURL = 'script/database.php';
         require_once $dbURL;
@@ -19,13 +27,15 @@
         <?php
         } 
         else {
-            $sql = "INSERT INTO `Tasks` (`ID`, `title`, `mark`, `difficulty`, `description`) VALUES (NULL, ?, ?, ?, ?)";
+            debug_to_console($des);
+            $sql = "INSERT INTO `Tasks` (`ID`, `user`, `title`, `mark`, `difficulty`, `description`) VALUES (NULL, ?, ?, ?, ?, ?)";
             $stmt = mysqli_stmt_init($conn);
             $prepareStmt = mysqli_stmt_prepare($stmt, $sql);
     
             if ($prepareStmt) {
-                mysqli_stmt_bind_param($stmt, "siss", $task, $mark, $dif, $des);
+                mysqli_stmt_bind_param($stmt, "ssiss", $_SESSION['user'], $task, $mark, $dif, $des);
                 mysqli_stmt_execute($stmt);
+                debug_to_console($des);
                 ?>
                 <script>window.onload = () => {alert('Додавання завдання виконано успішно');}</script>
                 <?php

@@ -1,5 +1,5 @@
 let teacherConfirmBlock = document.getElementsByClassName('section__list');
-let teacherConfirm = [...teacherConfirmBlock[0].getElementsByTagName('i')];
+let teacherConfirm = teacherConfirmBlock[0] !== undefined ? [...teacherConfirmBlock[0].getElementsByTagName('i')] : null;
 
 let sendConfirmation = (element) => {
     let request = new XMLHttpRequest();
@@ -11,22 +11,24 @@ let sendConfirmation = (element) => {
 }
 
 let adminRulesAccept = () => {
-    teacherConfirm.forEach((element) => {
-        element.addEventListener('click', () => {
-            if (element.classList.contains('fa-circle-check')) {
-                if (confirm('Прибрати підтвердження?')) {
-                    element.classList.remove('fa-circle-check');
-                    element.classList.add('fa-circle');
-                    sendConfirmation(element);
+    if (teacherConfirm !== null) {
+        teacherConfirm.forEach((element) => {
+            element.addEventListener('click', () => {
+                if (element.classList.contains('fa-circle-check')) {
+                    if (confirm('Прибрати підтвердження?')) {
+                        element.classList.remove('fa-circle-check');
+                        element.classList.add('fa-circle');
+                        sendConfirmation(element);
+                    }
                 }
-            }
-            else {
-                if (confirm('Підтвердити завдання?')) {
-                    element.classList.remove('fa-circle');
-                    element.classList.add('fa-circle-check');
-                    sendConfirmation(element);
+                else {
+                    if (confirm('Підтвердити завдання?')) {
+                        element.classList.remove('fa-circle');
+                        element.classList.add('fa-circle-check');
+                        sendConfirmation(element);
+                    }
                 }
-            }
+            });
         });
-    });
+    }
 };
