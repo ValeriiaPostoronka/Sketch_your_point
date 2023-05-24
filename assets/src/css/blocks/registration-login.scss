@@ -39,6 +39,20 @@
                             width: -webkit-fill-available;
                             width: -moz-available;
                         }
+
+                        textarea {
+                            font-family: var(--family);
+                            font-size: var(--fs-m);
+                            font-weight: 100;
+                            font-style: italic;
+                            padding: var(--sp-m) var(--sp-l);
+                            resize: none;
+                            border: 2px solid var(--c-04);
+                            border-radius: var(--br-m);
+                            box-shadow: var(--shadow);
+                            width: -webkit-fill-available;
+                            width: -moz-available;
+                        }
                     }
                 }
                 .section__actions {

@@ -1,8 +1,3 @@
-<?php 
-    $href = "#open-modal-log"; $button = "Log in"; 
-    include $_SERVER["DOCUMENT_ROOT"].'/templates/elements/buttons.php'; 
-?>
-
 <script>
     <?php $link = "http://".$_SERVER['HTTP_HOST']."/assets/src/css/blocks/registration-login.css"; ?>
     if (document.querySelector("link[href='<?php echo $link; ?>']") === null) {
@@ -31,7 +26,7 @@
 
             if ($user || $email) {
                 if (password_verify($password, $user["password"]) || password_verify($password, $email["password"])) {
-                    $_SESSION["user"] = $username;
+                    $_SESSION["user"] = $email['name'] ?? $user['name'];
 
                     $email = null;
                     $user = null;
@@ -46,7 +41,7 @@
 
                     if ($user || $email) {
                         if ($password == $user["password"] || $password == $email["password"]) {
-                            $_SESSION["admin"] = $username;
+                            $_SESSION["admin"] = $_SESSION["user"];
                         }
                     }
 
@@ -73,23 +68,23 @@
 
                     <main class="modal__content">
                         <div class="form-wrapper">
-                            <?php $title = "Log in Form"; include $_SERVER["DOCUMENT_ROOT"].'/templates/elements/title.php'; ?>
+                            <?php $title = "Увійдіть в систему"; include $_SERVER["DOCUMENT_ROOT"].'/templates/elements/title.php'; ?>
                         </div>
 
                         <form id="login-form" class="form" aria-label="Contact form" method="post" action="">
-                            <div class="alert hidden">There are empty fields</div>
+                            <div class="alert hidden">Заповніть пусті поля</div>
                             <div class="form__element">
-                                <label>Username</label>
+                                <label>Нікнейм</label>
                                 <br>
-                                <input type="text" placeholder="Username" name="username">
+                                <input type="text" placeholder="Нікнейм" name="username">
                             </div>
                             <div class="form__element">
-                                <label>Password</label>
+                                <label>Пароль</label>
                                 <br>
-                                <input type="password" placeholder="Password" name="password">
+                                <input type="password" placeholder="Пароль" name="password">
                             </div>
                             <div class="form__element section__actions">
-                                <?php $href = "#submit-login"; $button = "Log in"; include $_SERVER["DOCUMENT_ROOT"].'/templates/elements/buttons.php'; ?>
+                                <?php $href = "#submit-login"; $button = "Увійти"; include $_SERVER["DOCUMENT_ROOT"].'/templates/elements/buttons.php'; ?>
                             </div>
                         </form>
                     </main>

@@ -6,6 +6,7 @@
         "header"
         "main"
         "footer";
+
     .nothing {
         
         .section__title {
@@ -73,6 +74,7 @@
         display: flex;
         flex-direction: column;
         gap: var(--gap-m);
+        overflow-y: auto;
 
         &__element {
             display: flex;
@@ -92,18 +94,21 @@
                 font-weight: 600;
             }
         }
+    }
+
+    .action__button {
 
         .section__actions {
             margin-bottom: unset;
-            
-            .button {
-                padding: var(--sp-s) var(--sp-l);
-                background: var(--c-03);
-                color: var(--c-01);
+        }
+        
+        .button {
+            padding: var(--sp-s) var(--sp-l);
+            background: var(--c-03);
+            color: var(--c-01);
 
-                &:hover {
-                    background: var(--c-02);
-                }
+            &:hover {
+                background: var(--c-02);
             }
         }
     }

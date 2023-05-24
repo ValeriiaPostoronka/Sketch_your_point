@@ -1,11 +1,14 @@
-let registrationButton = document.querySelector("a[href='#open-modal-reg']");
+let registrationButton = [...document.querySelectorAll("a[href='#open-modal-reg']")];
 
-if (registrationButton !== null) {
-    registrationButton.addEventListener('click', () => {
-        MicroModal.show('modal-registration');
-        MicroModal.init();
-    });
-}
+registrationButton.forEach((element) => {
+    if (element !== null) {
+        element.addEventListener('click', () => {
+            MicroModal.show('modal-registration');
+            MicroModal.init();
+        });
+    }
+});
+
 
 let submitRegButton = document.querySelector("a[href='#submit-registration']");
 

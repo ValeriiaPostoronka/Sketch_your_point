@@ -22,8 +22,8 @@
     <div class="container">
         <div class="section__inner">
             <?php $title = "Взяті завдання"; include $_SERVER["DOCUMENT_ROOT"].'/templates/elements/title.php'; ?>
-            <div class="section__list">
                 <?php if (!empty($imgFiles)) { ?>
+                <div class="section__list">
                 <?php foreach ($imgFiles as $image) { ?>
                     <?php
                         $task = isset($taskRow) ? $taskRow['ID'] : explode('.', explode('_', $image)[1])[0];
@@ -50,10 +50,11 @@
                             </i>
                         </div>
                     </div>
-                <?php } } else { ?>
-                    <div class="item__mark">Поки ще немає робіт.</div>
                 <?php } ?>
-            </div>
+                </div>
+            <?php } else { ?>
+                <div class="nothing__grid">Поки ще немає робіт.</div>
+            <?php } ?>
         </div>
     </div>
 </section>

@@ -14,13 +14,17 @@
     <a href="<?php echo "http://".$_SERVER['HTTP_HOST'];?>" class="header__logo">
         <i class="fa-solid fa-paintbrush fa-2xl fa-beat-fade"></i>
     </a>
-    <?php if (basename($_SERVER['PHP_SELF']) != "canvas.php") { ?>
+    <?php if (basename($_SERVER['PHP_SELF']) == "index.php") { ?>
+        <div class="header__index">
+            Раді вітати вас на нашому сайті. Дізнайтесь більше про наш продукт та спробуйте скористатись ним для опанування художніх навичок.
+        </div>
+    <?php } else if (basename($_SERVER['PHP_SELF']) != "canvas.php") { ?>
         <div class="header__page">
             <a href = "http://localhost:8888/canvas.php">Редактор</a>
             <a href = "http://localhost:8888/templates/pages/artist.php">Сторінка користувача</a>
             <a href = "#">Рейтинг</a>
         </div>
-    <?php } else { ?>
+    <?php }else { ?>
         <div class="header__task">
             <?php 
             $fileName = $_SESSION['user'];
@@ -53,8 +57,18 @@
             <?php } ?>
         </div>
     <?php }?>
-    <?php 
-        $href = "http://".$_SERVER['HTTP_HOST']."/templates/blocks/script/logout.php"; $button = "Log out"; 
-        include $_SERVER['DOCUMENT_ROOT'].'/templates/elements/buttons.php';
-    ?>
+    <div class="header__buttons">
+        <?php 
+            if (isset($_SESSION['user'])) {
+                $href = "http://".$_SERVER['HTTP_HOST']."/templates/blocks/script/logout.php"; $button = "Вийти з аккаунту"; 
+                include $_SERVER['DOCUMENT_ROOT'].'/templates/elements/buttons.php';
+            }
+            else {
+                $href = "#open-modal-log"; $button = "Увійти в аккаунт"; 
+                include $_SERVER["DOCUMENT_ROOT"].'/templates/elements/buttons.php'; 
+                $href = "#open-modal-reg"; $button = "Реєстрація";
+                include 'templates/elements/buttons.php'; 
+            }
+        ?>
+    </div>
 </header>

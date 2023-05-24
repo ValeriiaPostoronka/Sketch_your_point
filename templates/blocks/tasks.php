@@ -6,6 +6,7 @@
 
         echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
     }
+
     $user = $_SESSION["user"];
     if (isset($_POST["task"])) {
         $task = $_POST["task"];
@@ -52,6 +53,7 @@
 
     $sql = "SELECT * FROM `Tasks`";
     $result = mysqli_query($conn, $sql);
+    $rowNum = mysqli_num_rows($result);
 ?>
 
 <aside class="tasks">
@@ -70,7 +72,7 @@
         </select>
     </div>
     <div class="tasks__list">
-        <?php while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {?>
+        <?php if ($rowNum > 0) { while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {?>
         <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/blocks/script/taskGetMarks.php'?>
         <?php 
             $id = $row["ID"];
@@ -95,7 +97,11 @@
                 <?php echo $row['title']; ?>
             </a>
         </div>
-        <?php }?>
+        <?php } } else { ?>
+            <div class="tasks__list-nothing">
+                Завдання поки що не додані
+            </div>
+        <?php } ?>
     </div>
     <label>Додай своє завдання:</label>
     <form class="tasks__text" id="submit-form" aria-label="Contact form" method="post" action="">

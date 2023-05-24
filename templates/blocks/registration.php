@@ -1,15 +1,12 @@
-<?php
-    $href = "#open-modal-reg"; $button = "Register";
-    include 'templates/elements/buttons.php'; 
-?>
-
 <section class="section section-reg">
     <?php
+    
         if (isset($_POST["email"])) {
             $username = $_POST["username"];
             $email = $_POST["email"];
             $password = $_POST["password"];
             $password_hash = password_hash($password, PASSWORD_DEFAULT);
+            $description = $_POST["description"];
             
             require_once $_SERVER['DOCUMENT_ROOT'].'/templates/blocks/script/database.php';
 
@@ -19,23 +16,23 @@
 
             if ($rowCount > 0) {
             ?>
-                <script>window.onload = () => {alert('Used email already defined in tha database, try again');}</script>
+                <script>window.onload = () => {alert('Користувач з такою електронною поштою вже існує.');}</script>
             <?php
             }
             else {
-                $sql = "INSERT INTO Users (email, name, password) VALUES (?,?,?)";
+                $sql = "INSERT INTO Users (email, name, password, descriprion) VALUES (?,?,?,?)";
                 $stmt = mysqli_stmt_init($conn);
                 $prepareStmt = mysqli_stmt_prepare($stmt, $sql);
         
                 if ($prepareStmt) {
-                    mysqli_stmt_bind_param($stmt, "sss", $email, $username, $password_hash);
+                    mysqli_stmt_bind_param($stmt, "ssss", $email, $username, $password_hash, $description);
                     mysqli_stmt_execute($stmt);
                     ?>
-                    <script>window.onload = () => {alert('Registration is successful');}</script>
+                    <script>window.onload = () => {alert('Вітаю! Реєстрація пройшла успішно.');}</script>
                     <?php
                 }
                 else {
-                    die("Something went wrong");
+                    die("Щось пішло не так. Перевірте введені дані та спробуйте надіслати форму повторно. Якщо проблема не буде вирішена зв'яжіться з нами.");
                 }
             }
         }                
@@ -51,36 +48,41 @@
 
                     <main class="modal__content">
                         <div class="form-wrapper">
-                            <?php $title = "Registration"; include $_SERVER['DOCUMENT_ROOT'].'/templates/elements/title.php'; ?>
+                            <?php $title = "Реєстрація"; include $_SERVER['DOCUMENT_ROOT'].'/templates/elements/title.php'; ?>
                         </div>
 
                         <form id="registration-form" class="form" aria-label="Contact form" method="post" action="">
-                            <div class="alert hidden">All fields are required</div>
-                            <div class="alert hidden">Password must be at least 8 characters long</div>
-                            <div class="alert hidden">Confirm password is wrong</div>
-                            <div class="alert hidden">Check your email</div>
+                            <div class="alert hidden">Необхідно заповнити всі поля</div>
+                            <div class="alert hidden">Пароль повинен бути більше 8 символів</div>
+                            <div class="alert hidden">Повторений пароль неправильний</div>
+                            <div class="alert hidden">Перевірте використану пошту</div>
                             <div class="form__element">
-                                <label>Username</label>
+                                <label>Нікнейм</label>
                                 <br>
-                                <input type="text" placeholder="Username" name="username">
+                                <input type="text" placeholder="Нікнейм" name="username">
                             </div>
                             <div class="form__element">
-                                <label>Email</label>
+                                <label>Електронна пошта</label>
                                 <br>
-                                <input type="email" placeholder="Email" name="email">
+                                <input type="email" placeholder="Електронна пошта" name="email">
                             </div>
                             <div class="form__element">
-                                <label>Password</label>
+                                <label>Пароль</label>
                                 <br>
-                                <input type="password" placeholder="Password" name="password">
+                                <input type="password" placeholder="Пароль" name="password">
                             </div>
                             <div class="form__element">
-                                <label>Repeat password</label>
+                                <label>Повторіть пароль</label>
                                 <br>
-                                <input type="password" placeholder="Password" name="repeatPassword">
+                                <input type="password" placeholder="Повторіть пароль" name="repeatPassword">
+                            </div>
+                            <div class="form__element">
+                                <label>Опис користувача</label>
+                                <br>
+                                <textarea placeholder="Опис..." name="description"></textarea>
                             </div>
                             <div class="form__element section__actions">
-                                <?php $href = "#submit-registration"; $button = "Registration"; include $_SERVER['DOCUMENT_ROOT'].'/templates/elements/buttons.php'; ?>
+                                <?php $href = "#submit-registration"; $button = "Реєстрація"; include $_SERVER['DOCUMENT_ROOT'].'/templates/elements/buttons.php'; ?>
                             </div>
                         </form>
                     </main>

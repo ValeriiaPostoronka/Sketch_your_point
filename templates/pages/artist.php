@@ -21,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="./../../assets/src/css/blocks/grid_drawing.css">
     <link rel="stylesheet" type="text/css" href="./../../assets/src/css/blocks/tasks.css">
     <link rel="stylesheet" type="text/css" href="./../../assets/src/css/blocks/modal_task.css">
+    <link rel="stylesheet" type="text/css" href="./../../assets/src/css/index.css">
     <script src="https://kit.fontawesome.com/5f551754c5.js" crossorigin="anonymous"></script>
 </head>
 <body>

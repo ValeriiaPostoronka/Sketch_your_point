@@ -1,11 +1,13 @@
-let loginButton = document.querySelector("a[href='#open-modal-log']");
+let loginButton = [...document.querySelectorAll("a[href='#open-modal-log']")];
 
-if (loginButton !== null) {
-    loginButton.addEventListener('click', () => {
-        MicroModal.show('modal-login');
-        MicroModal.init();
-    });
-}
+loginButton.forEach((element) => {
+    if (element !== null) {
+        element.addEventListener('click', () => {
+            MicroModal.show('modal-login');
+            MicroModal.init();
+        });
+    }
+});
 
 let submitLoginButton = document.querySelector("a[href='#submit-login']");
 

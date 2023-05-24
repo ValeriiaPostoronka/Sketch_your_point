@@ -19,7 +19,6 @@ noResults.setAttribute("class", "tasks__list-nothing");
 noResults.textContent = 'Немає результатів';
 
 let sortMode = (tasksArray) => {
-    console.log(tasksArray[0].classList.contains('tasks__list-nothing'));
     if (!tasksArray[0].classList.contains('tasks__list-nothing')) {
         let result = [];
         switch (sortingSelect[0].value) {

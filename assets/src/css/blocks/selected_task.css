@@ -59,6 +59,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--gap-m);
+  overflow-y: auto;
 }
 .wrapper .information__element {
   display: flex;
@@ -76,14 +77,14 @@
   color: var(--c-white);
   font-weight: 600;
 }
-.wrapper .information .section__actions {
+.wrapper .action__button .section__actions {
   margin-bottom: unset;
 }
-.wrapper .information .section__actions .button {
+.wrapper .action__button .button {
   padding: var(--sp-s) var(--sp-l);
   background: var(--c-03);
   color: var(--c-01);
 }
-.wrapper .information .section__actions .button:hover {
+.wrapper .action__button .button:hover {
   background: var(--c-02);
 }/*# sourceMappingURL=selected_task.css.map */

@@ -14,9 +14,6 @@ if (uploadPhoto !== null) {
             request.send(formData);
     
         }
-        else {
-            console.log('No file selected');
-        }
     });
 }
 

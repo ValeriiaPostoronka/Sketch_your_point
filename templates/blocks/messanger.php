@@ -36,7 +36,7 @@
             <div class="messages__list-item">
                 <div class="item__title">
                     <div class="item__title__name"><?php echo $row['user']; ?></div>
-                    <div class="item__title__rating">Рейтинг користувача: <?php echo $rowRating['rating'];?></div>
+                    <div class="item__title__rating">Рейтинг користувача: <?php echo $rowRating['rating'] != null ? $rowRating['rating'] : 0;?></div>
                 </div>
                 <div class="item__description"><?php echo $row['comment']; ?></div>
             </div>

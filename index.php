@@ -1,5 +1,12 @@
 <?php
     session_start();
+    function debug_to_console($data) {
+        $output = $data;
+        if (is_array($output))
+            $output = implode(',', $output);
+    
+        echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,30 +19,46 @@
     <link rel="stylesheet" type="text/css" href="/assets/src/css/base/base.css">
     <link rel="stylesheet" type="text/css" href="/assets/src/css/base/modal.css">
     <link rel="stylesheet" type="text/css" href="/assets/src/css/blocks/cards.css">
+    <link rel="stylesheet" type="text/css" href="/assets/src/css/base/header.css">
+    <link rel="stylesheet" type="text/css" href="/assets/src/css/base/footer.css">
+    <link rel="stylesheet" type="text/css" href="/assets/src/css/index.css">
+    <script src="https://kit.fontawesome.com/5f551754c5.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <?php include 'templates/blocks/cards.php'; ?>
-    <?php 
-    if (isset($_SESSION["user"])) 
-    { 
-        $href = "templates/blocks/script/logout.php"; $button = "Log out"; 
-        include 'templates/elements/buttons.php';
-        $href = "templates/pages/artist.php"; $button = "Сторінка користувача"; 
-        include 'templates/elements/buttons.php';
-    } 
-    else 
-    { 
+    <?php
         include 'templates/blocks/login.php'; 
-        include 'templates/blocks/registration.php';         
-    }
+        include 'templates/blocks/registration.php'; 
     ?>
+    <div class="wrapper">
+        <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/header.php'; ?>
+        <main class="main">
+            <?php include 'templates/blocks/cards.php'; ?>
+            <?php         
+            if (isset($_SESSION["user"])) 
+            { 
+                $href = "templates/blocks/script/logout.php"; $button = "Вийти з аккаунту"; 
+                include 'templates/elements/buttons.php';
+                $href = "templates/pages/artist.php"; $button = "Сторінка користувача"; 
+                include 'templates/elements/buttons.php';
+            } 
+            else 
+            { 
+                $href = "#open-modal-log"; $button = "Увійти в аккаунт"; 
+                include $_SERVER["DOCUMENT_ROOT"].'/templates/elements/buttons.php'; 
+                $href = "#open-modal-reg"; $button = "Реєстрація";
+                include 'templates/elements/buttons.php'; 
+            }
+            ?>
+        </main>
+        <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/footer.php'; ?>
+    </div>
     <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
     <script src="/assets/src/js/blocks/login.js"></script>
     <script src="/assets/src/js/blocks/registration.js"></script>
     <script>
-        if ( window.history.replaceState ) {
-            window.history.replaceState( null, null, window.location.href );
-        }
+            // if ( window.history.replaceState ) {
+            //     window.history.replaceState( null, null, window.location.href );
+            // }
     </script>
 </body>
 </html>

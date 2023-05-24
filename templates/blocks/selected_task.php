@@ -18,7 +18,7 @@
         <img src="<?php echo "http://".$_SERVER['HTTP_HOST']."/profile/".$profile;?>" alt="Artist photo">
         <div class="artist-task__title">
             <div class="artist-task__name"><?php echo $taskRow['user'];?></div>
-            <div class="artist-task__rating">Рейтинг користувача: <?php echo $row['rating']; ?></div>
+            <div class="artist-task__rating">Рейтинг користувача: <?php echo $row['rating'] != null ? $row['rating'] : 0; ?></div>
         </div>
     </div>
     <?php $title = "Інформація про завдання"; include '../elements/title.php'; ?>
@@ -39,9 +39,8 @@
             <label>Опис:</label>
             <div class="information__element-about"><?php echo $taskRow['description'] != null ? $taskRow['description'] : "Опис відсутній";?></div>
         </div>
-        <div class="section__actions">
-            <?php $href = "http://".$_SERVER['HTTP_HOST'].'/canvas.php?taskID='.$taskRow['ID']; $button = "Виконати завдання"; include $_SERVER["DOCUMENT_ROOT"].'/templates/elements/buttons.php'; ?>
-        </div>
     </div>
-
+    <div class="action__button">
+            <?php $href = "http://".$_SERVER['HTTP_HOST'].'/canvas.php?taskID='.$taskRow['ID']; $button = "Виконати завдання"; include $_SERVER["DOCUMENT_ROOT"].'/templates/elements/buttons.php'; ?>
+    </div>
 </aside>

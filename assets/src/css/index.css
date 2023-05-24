@@ -1,0 +1,9 @@
+.wrapper {
+  min-height: 100vh;
+  display: grid;
+  grid-template: minmax(70px, auto) 75vh minmax(70px, auto)/1fr;
+  grid-template-areas: "header" "main" "footer";
+}
+.wrapper .main {
+  overflow: auto;
+}/*# sourceMappingURL=index.css.map */

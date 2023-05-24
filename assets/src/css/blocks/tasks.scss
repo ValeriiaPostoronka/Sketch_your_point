@@ -1,17 +1,9 @@
 .wrapper {
-    min-height: 100vh; 
-    display: grid;
-    grid-template: minmax(70px, auto) 75vh minmax(70px, auto) / 1fr; 
-    grid-template-areas: 
-        "header"
-        "main"
-        "footer";
 
     .main {
         display: grid;
         grid-area: main;
         grid-template: 1fr / minmax(auto, 300px) 1fr;
-        overflow: auto;
         
         .tasks {
             background-color: var(--c-01);
