@@ -1,4 +1,5 @@
 #modal-registration .modal__container .modal__wrapper .modal__content .alert, #modal-login .modal__container .modal__wrapper .modal__content .alert {
+  font-family: var(--family);
   color: red;
 }
 #modal-registration .modal__container .modal__wrapper .modal__content .hidden, #modal-login .modal__container .modal__wrapper .modal__content .hidden {

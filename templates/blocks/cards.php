@@ -1,22 +1,22 @@
 <section class="section section-cards">
     <div class="container">
         <div class="section__inner">
-            <?php $title = "Search engines analyze text"; include '../elements/title.php'; ?>
+            <?php $title = "Переваги продукту<br>Sketch your point"; include $_SERVER["DOCUMENT_ROOT"].'/templates/elements/title.php'; ?>
             <ul class="items">
                 <li class="item">
                     <div class="item__number">(1)</div>
-                    <h3 class="item__name">Lorem, ipsum dolor.</h3>
-                    <div class="item__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit illum id excepturi sequi, perferendis voluptates tenetur quod fuga cumque, ipsa distinctio.</div>
+                    <h3 class="item__name">Легкий та зрозумілий функціонал</h3>
+                    <div class="item__text">Такий веб-застосунок сприяє інтерактивному навчанню та мотивує дітей через елементи гри. Зрозумілий та легкий у використанні інтерфейс платформи допомагає дітям швидко адаптуватися та зосереджуватися на процесі навчання.</div>
                 </li>
                 <li class="item">
                     <div class="item__number">(2)</div>
-                    <h3 class="item__name">Lorem, ipsum.</h3>
-                    <div class="item__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur eveniet expedita quis, dolor odit nostrum.</div>
+                    <h3 class="item__name">Онлайн-режим роботи</h3>
+                    <div class="item__text">Діти можуть отримати доступ до платформи через інтернет з будь-якого пристрою, що робить навчання більш гнучким і дозволяє їм вчитися у зручний для них час і місце. Без необхідності встановлення додаткового програмного забезпечення. Ця платформа спрощує процес навчання, забезпечуючи швидкий та безперервний доступ до інструментів та функцій. Все, що потрібно, - це доступ до Інтернету та облікового запису.</div>
                 </li>
                 <li class="item">
                     <div class="item__number">(3)</div>
-                    <h3 class="item__name">Lorem ipsum dolor sit.</h3>
-                    <div class="item__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, dolore?</div>
+                    <h3 class="item__name">Спільнота однодумців</h3>
+                    <div class="item__text">Багатокористувацький аспект платформи дозволяє дітям спілкуватися з іншими учасниками, обмінюватися досвідом та взаємодіяти один з одним. Взаємне оцінювання та обговорення робіт сприяють розвитку критичного мислення, вдосконаленню технічних навичок та виробленню професійної звички отримувати та давати зворотний зв'язок.</div>
                 </li>
             </ul>
         </div>
