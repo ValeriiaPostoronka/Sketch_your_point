@@ -1,0 +1,62 @@
+.section.section-rating {
+  margin-top: var(--sp-section);
+  margin-bottom: var(--sp-section);
+}
+.section.section-rating .container {
+  max-width: var(--container);
+  padding: 0 var(--sp-xl) 0 var(--sp-xl);
+  margin: auto;
+}
+.section.section-rating .container .section__inner .artist-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-m);
+}
+.section.section-rating .container .section__inner .artist-list__item {
+  background-color: var(--c-04);
+  border-radius: var(--br-m);
+  text-decoration: none;
+}
+.section.section-rating .container .section__inner .artist-list__item:visited, .section.section-rating .container .section__inner .artist-list__item:active, .section.section-rating .container .section__inner .artist-list__item:hover {
+  color: var(--c-05);
+}
+.section.section-rating .container .section__inner .artist-list__item:hover {
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transform: translateY(-1px);
+  transition-delay: 0s;
+  transition-duration: 0.3s;
+  transition-property: transform;
+  transition-timing-function: ease;
+  border-radius: var(--br-m);
+}
+.section.section-rating .container .section__inner .artist-list__item .artist-task {
+  display: flex;
+  gap: var(--gap-m);
+  margin: var(--sp-l) var(--sp-xl);
+}
+.section.section-rating .container .section__inner .artist-list__item .artist-task img {
+  height: 60px;
+  width: auto;
+  border-radius: 50%;
+}
+.section.section-rating .container .section__inner .artist-list__item .artist-task__rating {
+  font-family: var(--family);
+  color: var(--c-05);
+  font-size: var(--fs-xl);
+  font-weight: 500;
+  align-self: center;
+}
+.section.section-rating .container .section__inner .artist-list__item .artist-task__name {
+  font-family: var(--family);
+  color: var(--c-05);
+  font-size: var(--fs-l);
+  font-weight: 500;
+  align-self: center;
+}
+.section.section-rating .container .section__inner .artist-list__item .artist-task__number, .section.section-rating .container .section__inner .artist-list__item .artist-task__mark, .section.section-rating .container .section__inner .artist-list__item .artist-task__create {
+  font-size: var(--fs-m);
+  font-family: var(--family);
+  align-self: center;
+  font-style: italic;
+}/*# sourceMappingURL=rating.css.map */

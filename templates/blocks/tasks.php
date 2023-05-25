@@ -5,7 +5,6 @@
         $mark = $_POST["mark"];
         $dif = $_POST["difficulty"];
         $des = $_POST["description"];
-        debug_to_console($des);
         
         $dbURL = 'script/database.php';
         require_once $dbURL;
@@ -20,7 +19,6 @@
         <?php
         } 
         else {
-            debug_to_console($des);
             $sql = "INSERT INTO `Tasks` (`ID`, `user`, `title`, `mark`, `difficulty`, `description`) VALUES (NULL, ?, ?, ?, ?, ?)";
             $stmt = mysqli_stmt_init($conn);
             $prepareStmt = mysqli_stmt_prepare($stmt, $sql);
@@ -28,7 +26,6 @@
             if ($prepareStmt) {
                 mysqli_stmt_bind_param($stmt, "ssiss", $_SESSION['user'], $task, $mark, $dif, $des);
                 mysqli_stmt_execute($stmt);
-                debug_to_console($des);
                 ?>
                 <script>window.onload = () => {alert('Додавання завдання виконано успішно');}</script>
                 <?php

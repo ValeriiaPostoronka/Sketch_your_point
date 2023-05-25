@@ -22,7 +22,7 @@
         <div class="header__page">
             <a href = "http://localhost:8888/canvas.php">Редактор</a>
             <a href = "http://localhost:8888/templates/pages/artist.php">Сторінка користувача</a>
-            <a href = "#">Рейтинг</a>
+            <a href = "http://localhost:8888/templates/pages/rating.php">Рейтинг</a>
         </div>
     <?php }else { ?>
         <div class="header__task">
