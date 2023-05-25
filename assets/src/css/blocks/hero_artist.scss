@@ -31,6 +31,9 @@
 
             img {
                 border-radius: 50%;
+                height: auto;
+                max-width: 100%;
+                box-shadow: var(--shadow);
             }
         }
     }

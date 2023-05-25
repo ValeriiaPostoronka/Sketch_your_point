@@ -29,4 +29,7 @@
 }
 .section.section-hero_artist .container .section__image img {
   border-radius: 50%;
+  height: auto;
+  max-width: 100%;
+  box-shadow: var(--shadow);
 }/*# sourceMappingURL=hero_artist.css.map */

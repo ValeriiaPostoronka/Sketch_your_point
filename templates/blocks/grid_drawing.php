@@ -21,7 +21,7 @@
 <section class="section section-grid_drawing">
     <div class="container">
         <div class="section__inner">
-            <?php $title = "Взяті завдання"; include $_SERVER["DOCUMENT_ROOT"].'/templates/elements/title.php'; ?>
+            <?php $title = "Галерея робіт"; include $_SERVER["DOCUMENT_ROOT"].'/templates/elements/title.php'; ?>
                 <?php if (!empty($imgFiles)) { ?>
                 <div class="section__list">
                 <?php foreach ($imgFiles as $image) { ?>

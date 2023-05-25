@@ -60,8 +60,8 @@
                     <input type="range" class="sidebar__range" min="3" max="30" orient="vertical" value="10">
                 </nav>
                 <input type="color" class="sidebar__color">
-                <?php $href = "#save_button"; $button = "Save"; include './templates/elements/buttons.php' ?>
-                <?php $href = "#clean_button"; $button = "Clear canvas"; include './templates/elements/buttons.php' ?>
+                <?php $href = "#save_button"; $button = "Зберегти"; include './templates/elements/buttons.php' ?>
+                <?php $href = "#clean_button"; $button = "Очистити"; include './templates/elements/buttons.php' ?>
             </aside>
             <div class="canvas">
                 <canvas></canvas>

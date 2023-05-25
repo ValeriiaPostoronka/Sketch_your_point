@@ -16,7 +16,6 @@
     <link rel="stylesheet" type="text/css" href="./../../assets/src/css/base/modal.css">
     <link rel="stylesheet" type="text/css" href="./../../assets/src/css/base/header.css">
     <link rel="stylesheet" type="text/css" href="./../../assets/src/css/base/footer.css">
-    <link rel="stylesheet" type="text/css" href="./../../assets/src/css/elements/image.css">
     <link rel="stylesheet" type="text/css" href="./../../assets/src/css/blocks/hero_artist.css">
     <link rel="stylesheet" type="text/css" href="./../../assets/src/css/blocks/grid_drawing.css">
     <link rel="stylesheet" type="text/css" href="./../../assets/src/css/blocks/tasks.css">

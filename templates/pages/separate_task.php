@@ -15,7 +15,6 @@
     <link rel="stylesheet" type="text/css" href="./../../assets/src/css/base/base.css">
     <link rel="stylesheet" type="text/css" href="./../../assets/src/css/base/header.css">
     <link rel="stylesheet" type="text/css" href="./../../assets/src/css/base/footer.css">
-    <link rel="stylesheet" type="text/css" href="./../../assets/src/css/elements/image.css">
     <link rel="stylesheet" type="text/css" href="./../../assets/src/css/blocks/grid_drawing.css">
     <link rel="stylesheet" type="text/css" href="./../../assets/src/css/blocks/selected_task.css">
     <link rel="stylesheet" type="text/css" href="./../../assets/src/css/blocks/messanger.css">
@@ -70,6 +69,7 @@
 
     <script src="../../assets/src/js/blocks/messanger.js"></script>
     <script src="../../assets/src/js/blocks/grid_drawing.js"></script>
+    <script src="../../assets/src/js/fslightbox.js"></script>
     <script>
         if ( window.history.replaceState ) {
             window.history.replaceState( null, null, window.location.href );

@@ -27,6 +27,10 @@
 .section.section-grid_drawing .container .section__list a {
   text-decoration: unset;
 }
+.section.section-grid_drawing .container .section__list .item img {
+  height: auto;
+  max-width: 100%;
+}
 .section.section-grid_drawing .container .section__list .item__image {
   border-radius: var(--br-m);
 }

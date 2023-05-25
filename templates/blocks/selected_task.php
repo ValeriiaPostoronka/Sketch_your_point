@@ -37,7 +37,7 @@
         </div>
         <div class="information__element">
             <label>Опис:</label>
-            <div class="information__element-about"><?php echo $taskRow['description'] != null ? $taskRow['description'] : "Опис відсутній";?></div>
+            <div class="information__element-about"><?php echo $taskRow['description'] != null ? $taskRow['description'] : "Опис відсутній.";?></div>
         </div>
     </div>
     <div class="action__button">
