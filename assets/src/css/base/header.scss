@@ -47,7 +47,7 @@
         grid-column: 2 / 3;
 
         .fa-beat-fade {
-            color: #547793;
+            color: var(--c-05);
             animation-name: none;
 
             &:hover {

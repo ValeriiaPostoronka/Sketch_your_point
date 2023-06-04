@@ -38,7 +38,7 @@
   width: -moz-max-content;
   width: max-content;
   margin: auto;
-  background-color: #C1C9CC;
+  background-color: var(--c-04);
   border-radius: 12px;
 }
 .wrapper .main .sidebar__tool {
@@ -47,15 +47,15 @@
   height: auto;
   padding-left: 4px;
   margin: 5px;
-  color: #F7F2EF;
+  color: var(--c-03);
 }
 .wrapper .main .sidebar__tool:hover {
-  color: #547793;
+  color: var(--c-01);
   opacity: 0.4;
   transition: 0.4s;
 }
 .wrapper .main .sidebar__tool .active {
-  color: #547793;
+  color: var(--c-01);
 }
 .wrapper .main .sidebar__color {
   width: 100%;

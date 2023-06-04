@@ -57,7 +57,7 @@
         <select class="tasks__sorting-list">
             <option value="time" selected>Часом</option>
             <option value="rating">Рейтингом</option>
-            <option value="my">Моїм виконанням</option>
+            <option value="my">Моїм створенням</option>
         </select>
     </div>
     <div class="tasks__list">

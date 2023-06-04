@@ -41,7 +41,7 @@
                 grid-template-columns: repeat(2, max-content);
                 width: max-content;
                 margin: auto;
-                background-color: #C1C9CC;
+                background-color: var(--c-04);
                 border-radius: 12px;
             }
 
@@ -51,16 +51,16 @@
                 height: auto;
                 padding-left: 4px;
                 margin: 5px;
-                color: #F7F2EF;
+                color: var(--c-03);
 
                 &:hover {
-                    color: #547793;
+                    color: var(--c-01);
                     opacity: 0.4;
                     transition: 0.4s;
                 }
 
                 .active {
-                    color: #547793;
+                    color: var(--c-01);
                 }
             }
 
