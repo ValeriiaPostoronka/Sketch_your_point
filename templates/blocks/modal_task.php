@@ -1,3 +1,14 @@
+<?php
+    $user = $_SESSION['user'];
+    $profileScan = glob($_SERVER['DOCUMENT_ROOT'].'/profile/'.$user.'.*');
+    if (empty($profileScan)){
+        $profile = "undefined.png";
+    }
+    else {
+        $profile = basename($profileScan[0]);
+    }
+?>
+
 <div class="modal" id="modal-task" aria-hidden="true">
     <div class="modal__overlay" tabindex="-1" data-micromodal-close>
         <div class="modal__container" role="dialog" aria-modal="true">
@@ -13,9 +24,9 @@
                     </div>
 
                     <div class="artist-task">
-                        <img src="../../assets/src/img/106906351.jpeg" alt="Artist photo">
+                        <img src="<?php echo "http://".$_SERVER['HTTP_HOST']."/profile/".$profile;?>" alt="Artist photo">
                         <div class="artist-task__title">
-                            <div class="artist-task__name">Посторонка Валерія</div>
+                            <div class="artist-task__name"><?php echo $user;?></div>
                             <textarea form="task-form" name="task" class="artist-task__text"></textarea>
                         </div>
                     </div>
